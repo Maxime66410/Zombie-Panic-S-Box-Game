@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace MinimalExample
+namespace ZombiePanic
 {
 
 	/// <summary>
@@ -18,19 +18,14 @@ namespace MinimalExample
 	/// You can use this to create things like HUDs and declare which player class
 	/// to use for spawned players.
 	/// </summary>
-	public partial class MinimalGame : Sandbox.Game
+	public partial class Game : Sandbox.Game
 	{
-		public MinimalGame()
+		public Game()
 		{
-			if ( IsServer )
+			if ( IsServer ) 
 			{
 				Log.Info( "My Gamemode Has Created Serverside!" );
-
-				// Create a HUD entity. This entity is globally networked
-				// and when it is created clientside it creates the actual
-				// UI panels. You don't have to create your HUD via an entity,
-				// this just feels like a nice neat way to do it.
-				new MinimalHudEntity();
+				new SpawnHudEntity();
 			}
 
 			if ( IsClient )
@@ -46,7 +41,7 @@ namespace MinimalExample
 		{
 			base.ClientJoined( client );
 
-			var player = new MinimalPlayer();
+			var player = new BasePlayer();
 			client.Pawn = player;
 
 			player.Respawn();
