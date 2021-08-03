@@ -1,0 +1,56 @@
+// 
+// DeathmatchGame : Sandbox.Game 
+// 
+@PointClass = dm98 : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
+// 
+// Crossbow : BaseDmWeapon 
+// 
+@PointClass  editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) 
+metadata
+{
+}
+= dm_crossbow : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
+// 
+// Pistol : BaseDmWeapon 
+// 
+@PointClass  editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) 
+metadata
+{
+}
+= dm_pistol : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
+// 
+// Shotgun : BaseDmWeapon 
+// 
+@PointClass  editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) 
+metadata
+{
+}
+= dm_shotgun : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
+// 
+// SMG : BaseDmWeapon 
+// 
+@PointClass  editormodel( "weapons/rust_smg/rust_smg.vmdl" ) 
+metadata
+{
+}
+= dm_smg : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
