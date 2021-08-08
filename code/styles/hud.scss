@@ -44,6 +44,35 @@ vitals
 			color: #f00;
 			text-shadow: 0px 0px 10px #f005;
 		}
+
+		&.team
+		{
+			position: absolute;
+			top: 80px;
+			color: rgb(156, 255, 64);
+			font-size: 48px;
+		}
+	}
+}
+
+timer
+{
+	
+	label
+	{
+		&.timer
+		{
+			color: #333333;
+			font-size: 64px;
+		}
+
+		&.round
+		{
+			font-size: 15px;
+			top: 15px;
+			left: 15px;
+		}
+
 	}
 }
 

@@ -3,13 +3,16 @@ using System;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using ZombiePanic;
 
-partial class DeathmatchPlayer : Player
+public partial class DeathmatchPlayer : Sandbox.Player
 {
-	TimeSince timeSinceDropped;
+	TimeSince timeSinceDropped; 
 
 	public bool SupressPickupNotices { get; private set; }
-
+	[Net] public bool IsZombie { get; set; }
+	[Net] public bool IsDead { get; set; }
+	
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -17,6 +20,9 @@ partial class DeathmatchPlayer : Player
 
 	public override void Respawn()
 	{
+		if (!DeathmatchGame.Instance.RespawnEnabled)
+			return;
+		
 		SetModel( "models/citizen/citizen.vmdl" );
 
 		Controller = new WalkController();
@@ -33,18 +39,28 @@ partial class DeathmatchPlayer : Player
 
 		SupressPickupNotices = true;
 
-		Inventory.Add( new Pistol(), true );
-		Inventory.Add( new Shotgun() );
-		Inventory.Add( new SMG() );
-		Inventory.Add( new Crossbow() );
+		if ( !IsZombie )
+		{
+			Inventory.Add( new Pistol(), true );
+			Inventory.Add( new Shotgun() );
+			Inventory.Add( new SMG() );
+			Inventory.Add( new Crossbow() );
 
-		GiveAmmo( AmmoType.Pistol, 100 );
-		GiveAmmo( AmmoType.Buckshot, 8 );
-		GiveAmmo( AmmoType.Crossbow, 4 );
+			GiveAmmo( AmmoType.Pistol, 100 );
+			GiveAmmo( AmmoType.Buckshot, 8 );
+			GiveAmmo( AmmoType.Crossbow, 4 );
+		}
 
 		SupressPickupNotices = false;
 		Health = 100;
 
+		if ( IsDead )
+		{
+			IsZombie = true;
+		}
+
+		IsDead = false;
+		
 		base.Respawn();
 	}
 	public override void OnKilled()
@@ -61,6 +77,8 @@ partial class DeathmatchPlayer : Player
 
 		EnableAllCollisions = false;
 		EnableDrawing = false;
+
+		IsDead = true;
 	}
 
 
@@ -96,18 +114,21 @@ partial class DeathmatchPlayer : Player
 			}
 		}
 
-		if ( Input.Pressed( InputButton.Drop ) )
+		if ( !IsZombie )
 		{
-			var dropped = Inventory.DropActive();
-			if ( dropped != null )
+			if ( Input.Pressed( InputButton.Drop ) )
 			{
-				if ( dropped.PhysicsGroup != null )
+				var dropped = Inventory.DropActive();
+				if ( dropped != null )
 				{
-					dropped.PhysicsGroup.Velocity = Velocity + (EyeRot.Forward + EyeRot.Up) * 300;
-				}
+					if ( dropped.PhysicsGroup != null )
+					{
+						dropped.PhysicsGroup.Velocity = Velocity + (EyeRot.Forward + EyeRot.Up) * 300;
+					}
 
-				timeSinceDropped = 0;
-				SwitchToBestWeapon();
+					timeSinceDropped = 0;
+					SwitchToBestWeapon();
+				}
 			}
 		}
 
