@@ -24,6 +24,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			return;
 		
 		SetModel( "models/citizen/citizen.vmdl" );
+		//SetMaterialGroup(1);
 
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
