@@ -23,8 +23,18 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if (!DeathmatchGame.Instance.RespawnEnabled)
 			return;
 		
+		if ( IsDead )
+		{
+			IsZombie = true;
+		}
+		
 		SetModel( "models/citizen/citizen.vmdl" );
-		//SetMaterialGroup(1);
+
+		if ( IsDead )
+		{
+			SetMaterialGroup( 3 );
+			RenderColor = Color.Green;
+		}
 
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
@@ -46,18 +56,26 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			Inventory.Add( new Shotgun() );
 			Inventory.Add( new SMG() );
 			Inventory.Add( new Crossbow() );
-
+			Inventory.Add( new Knife() );
+			
 			GiveAmmo( AmmoType.Pistol, 100 );
 			GiveAmmo( AmmoType.Buckshot, 8 );
 			GiveAmmo( AmmoType.Crossbow, 4 );
 		}
+		else
+		{
+			Inventory.Add( new ZombieHand(), true );
+		}
 
 		SupressPickupNotices = false;
-		Health = 100;
 
-		if ( IsDead )
+		if ( !IsZombie )
 		{
-			IsZombie = true;
+			Health = 100;
+		}
+		else
+		{
+			Health = 250;
 		}
 
 		IsDead = false;
@@ -68,7 +86,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	{
 		base.OnKilled();
 
-		Inventory.DropActive();
+		if ( !IsZombie )
+		{
+			Inventory.DropActive();
+		}
 		Inventory.DeleteContents();
 
 		BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
@@ -101,7 +122,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( LifeState != LifeState.Alive )
 			return;
 
-		TickPlayerUse();
+		if ( !IsZombie )
+		{
+			TickPlayerUse();
+		}
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
