@@ -8,7 +8,6 @@ public class Vitals : Panel
 	public Label Health;
 	public Label Timer;
 	public Label Team;
-	public Label Round;
 
 	public Vitals()
 	{

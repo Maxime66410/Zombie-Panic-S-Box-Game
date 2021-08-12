@@ -12,6 +12,9 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	public bool SupressPickupNotices { get; private set; }
 	[Net] public bool IsZombie { get; set; }
 	[Net] public bool IsDead { get; set; }
+
+
+	DeathmatchGame Game;
 	
 	public DeathmatchPlayer()
 	{
@@ -20,9 +23,6 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public override void Respawn()
 	{
-		if (!DeathmatchGame.Instance.RespawnEnabled)
-			return;
-		
 		if ( IsDead )
 		{
 			IsZombie = true;
@@ -100,7 +100,11 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		EnableAllCollisions = false;
 		EnableDrawing = false;
 
-		IsDead = true;
+		if ( Game.IsGameIsLaunch == true )
+		{
+			IsDead = true;
+		}
+		
 	}
 
 

@@ -55,7 +55,7 @@ vitals
 	}
 }
 
-rounds
+timerui
 {
 	font-size: 64px;
 	color: #ff0;
@@ -69,9 +69,8 @@ rounds
 		
 		&.timer
 		{
-			position: absolute;
-			top: 50px;
-			left: 5000%;
+			margin-left: 55%;
+			top: 20px;
 			color: rgb(156, 255, 64);
 			font-size: 48px;
 		}

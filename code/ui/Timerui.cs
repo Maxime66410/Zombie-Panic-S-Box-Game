@@ -2,14 +2,12 @@
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-public class TimerGameUI : Panel
+public class Timerui : Panel
 {
 	public Label Timer;
-	public Label Round;
-
-	public TimerGameUI()
+	public Timerui()
 	{
-		Timer = Add.Label( "Waiting Player" );
+		Timer = Add.Label( "Waiting Players" );
 	}
 
 	public override void Tick()
