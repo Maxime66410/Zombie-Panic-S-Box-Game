@@ -15,7 +15,7 @@ namespace ZombiePanic {
   /// This is the heart of the gamemode. It's responsible
   /// for creating the player and stuff.
   /// </summary>
-  [Library("dm98", Title = "DM98")]
+  [Library("zombiepanic", Title = "Zombie Panic")]
   public partial class DeathmatchGame : Game
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
@@ -59,6 +59,8 @@ namespace ZombiePanic {
     public void StartGame()
     {
 	    Instance.IsGameIsLaunch = true;
+	    Log.Info(Instance.IsGameIsLaunch);
+	    OnStartGame();
     }
     
 
@@ -96,8 +98,63 @@ namespace ZombiePanic {
 		    await Task.DelaySeconds( 1 );
 		    if ( Client.All.Count <= 1 )
 		    {
-			    Instance.IsGameIsLaunch = false;
+			    if ( Instance.IsGameIsLaunch )
+			    {
+				    Instance.IsGameIsLaunch = false;
+				    OnFinishGame();
+			    }
 			    break; 
+		    }
+	    }
+    }
+
+    public void OnStartGame()
+    {
+	    Random rand = new Random();
+	    var target = Client.All[rand.Next(Client.All.Count)];
+	    target.Pawn.Tags.Add("zombie");
+
+	    foreach ( Client clients in Client.All )
+	    {
+		    if ( clients.Pawn is not DeathmatchPlayer player )
+		    {
+			    continue;
+		    }
+		    
+		    player.Respawn();
+	    }
+	    
+    }
+
+    public void OnFinishGame()
+    {
+	    
+	    foreach ( Client client in Client.All )
+	    {
+		    if ( client.Pawn is not DeathmatchPlayer player )
+		    {
+			    continue;
+		    }
+		    
+		    if ( player.Tags.Has( "zombie" ) )
+		    {
+			    player.Tags.Remove( "Zombie" );
+		    }
+    
+		    player.Respawn();
+	    }
+    }
+
+    public void CheckStatsGame()
+    {
+	    if ( Instance.IsGameIsLaunch == true )
+	    {
+		    foreach ( Client cls in Client.All )
+		    {
+			    if ( cls.Pawn is not DeathmatchPlayer player )
+			    {
+				    continue;
+			    }
 		    }
 	    }
     }

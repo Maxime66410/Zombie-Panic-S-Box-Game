@@ -28,18 +28,19 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			if ( IsDead )
 			{
 				IsZombie = true;
-				SetMaterialGroup( 3 );
+				SetMaterialGroup( 1 );
 				RenderColor = Color.Green;
 			}
 		}
-
-		if ( Tags.Has( "Zombie" ) )
+		else
 		{
-			IsZombie = true;
-			SetMaterialGroup( 3 );
-			RenderColor = Color.Green;
+			IsZombie = false;
+			SetMaterialGroup( 1 );
+			RenderColor = Color.White;
+			Inventory.DeleteContents();
 		}
-		
+
+
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
 		Camera = new FirstPersonCamera();
