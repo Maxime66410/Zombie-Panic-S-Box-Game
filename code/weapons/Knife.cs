@@ -6,7 +6,6 @@ using System;
 partial class Knife : BaseDmWeapon
 {
 	public override string ViewModelPath => "weapons/rust_boneknife/v_rust_boneknife.vmdl";
-
 	public override int ClipSize => -1;
 	public override float PrimaryRate => 1.0f;
 	public override float SecondaryRate => 0.5f;
@@ -50,7 +49,7 @@ partial class Knife : BaseDmWeapon
 	public override void AttackPrimary()
 	{
 		//if (!CanPrimaryAttack()) return;
-
+		
 		PlaySound("rust_boneknife.attack");
 		MeleeStrike(BaseDamage, 1.5f);
 		

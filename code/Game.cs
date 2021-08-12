@@ -43,6 +43,8 @@ namespace ZombiePanic {
         new DeathmatchHud();
       }
     }
+    
+    public override void DoPlayerNoclip(Client player) {}
 
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();

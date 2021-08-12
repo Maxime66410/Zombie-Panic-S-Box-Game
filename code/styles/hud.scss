@@ -55,11 +55,8 @@ vitals
 	}
 }
 
-timer
+rounds
 {
-	position: absolute;
-	bottom: 64px;
-	left: 100px;
 	font-size: 64px;
 	color: #ff0;
 	mix-blend-mode: lighten;
@@ -73,7 +70,8 @@ timer
 		&.timer
 		{
 			position: absolute;
-			top: 80px;
+			top: 50px;
+			left: 5000%;
 			color: rgb(156, 255, 64);
 			font-size: 48px;
 		}

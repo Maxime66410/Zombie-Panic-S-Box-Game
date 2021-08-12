@@ -14,10 +14,10 @@ public partial class DeathmatchHud : HudEntity<RootPanel>
 			return;
 
 		RootPanel.StyleSheet.Load( "/styles/hud.scss" );
-
+ 
 		RootPanel.AddChild<Vitals>();
 		RootPanel.AddChild<Ammo>();
-		RootPanel.AddChild<Rounds>();
+		RootPanel.AddChild<TimerGameUI>();
 
 		RootPanel.AddChild<NameTags>();
 		RootPanel.AddChild<DamageIndicator>();

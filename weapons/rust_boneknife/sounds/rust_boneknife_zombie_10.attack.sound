@@ -4,13 +4,13 @@
 	{
 		sounds = 
 		[
-			"weapons/rust_flashlight/sounds/flashlight-attack.vsnd",
+			"weapons/rust_boneknife/sounds/zcarrier_attack-10.vsnd",
 		]
 		UI = false
 		Volume = 1.0
 		VolumeRandom = 0.0
 		Pitch = 1.0
 		PitchRandom = 0.5
-		DistanceMax = 1000.0
+		DistanceMax = 350.0
 	}
 }
