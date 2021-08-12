@@ -15,7 +15,7 @@ namespace ZombiePanic {
   /// for creating the player and stuff.
   /// </summary>
   [Library("dm98", Title = "DM98")]
-  public partial class DeathmatchGame: Game
+  public partial class DeathmatchGame : Game
   {
 	  [Net] public BaseRound Round { get; private set; }
 	  
@@ -41,15 +41,65 @@ namespace ZombiePanic {
 
       if (IsServer) {
         new DeathmatchHud();
+        
+        _ = StartTickTimer();
       }
     }
     
     public override void DoPlayerNoclip(Client player) {}
 
+    
+    public async Task StartSecondTimer()
+    {
+	    while (true)
+	    {
+		    await Task.DelaySeconds(1);
+		    OnSecond();
+	    }
+    }
+    
+    public async Task StartTickTimer()
+    {
+	    while (true)
+	    {
+		    await Task.NextPhysicsFrame();
+		    OnTick();
+	    }
+    }
+    
+    private void CheckMinimumPlayers()
+    {
+	    if (Client.All.Count >= 2)
+		    if (Round == null)
+			    ChangeRound(new PreparingGame());
+    }
+    
+    public void ChangeRound(PreparingGame round)
+    {
+	    Assert.NotNull(round);
+		
+	    Round?.Finish();
+	    Round = round;
+	    Round?.Start();
+    }
+
+    private void OnSecond()
+    {
+	    CheckMinimumPlayers();
+	    Round?.OnSecond();
+    }
+
+    private void OnTick()
+    {
+	    Round?.OnTick();
+    }
+    
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();
 
       ItemRespawn.Init();
+      
+      _ = StartTickTimer();
     }
 
     public override void ClientJoined(Client cl) {

@@ -5,16 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public class PreparingGame : BaseRound
+public partial class endGame : BaseRound
 {
-	public override string RoundName => "Preparing";
+	public override string RoundName => "Ending";
 
 	public override int RoundDuration { get; set; } = 30;
+	
+	public override void OnPlayerKilled(DeathmatchPlayer player)
+	{
+		player.Respawn();
+	}
 	
 	public override void OnPlayerLeave(DeathmatchPlayer player)
 	{
 		base.OnPlayerLeave(player);
+		
+		if (Players.Contains(player))
+			Players.Remove(player);
 	}
 	
 	public override void OnPlayerSpawn(DeathmatchPlayer player)
@@ -22,33 +29,29 @@ public class PreparingGame : BaseRound
 		if (!Players.Contains(player))
 			AddPlayer(player);
 			
+		//player.MakeSpectator();
 		base.OnPlayerSpawn(player);
 	}
 	
 	protected override void OnStart()
 	{
-		foreach (var client in Client.All)
-		{
-			if (client.Pawn is not DeathmatchPlayer player)
-				continue;
-
-			player.Respawn();
-		}
+		//Game.Instance.RespawnEnabled = false;
+		base.OnStart();
 	}
 	
-	public override void OnTick()
-	{
-		base.OnTick();
-	}
-
 	public override void OnSecond()
 	{
 		base.OnSecond();
 	}
 
+	public override void OnTick()
+	{
+		base.OnTick();
+	}
+
 	public override void OnTimeUp()
 	{
-		//DeathmatchGame.Instance.ChangeRound(new playingGame());
+		//Game.Instance.ChangeRound(new preparingGame());
 		base.OnTimeUp();
 	}
 }
