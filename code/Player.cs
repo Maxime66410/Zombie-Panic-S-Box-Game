@@ -32,6 +32,13 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				RenderColor = Color.Green;
 			}
 		}
+
+		if ( Tags.Has( "Zombie" ) )
+		{
+			IsZombie = true;
+			SetMaterialGroup( 3 );
+			RenderColor = Color.Green;
+		}
 		
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();

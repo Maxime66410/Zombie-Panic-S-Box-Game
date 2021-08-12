@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace ZombiePanic {
 
@@ -46,9 +47,12 @@ namespace ZombiePanic {
 
     public void CheckMinimumPlayers()
     {
-	    if ( Client.All.Count >= 2 )
+	    if ( Instance.IsGameIsLaunch == false )
 	    {
-		    StartGame();
+		    if ( Client.All.Count >= 2 )
+		    {
+			    StartGame();
+		    }
 	    }
     }
     
@@ -57,7 +61,7 @@ namespace ZombiePanic {
 	    Instance.IsGameIsLaunch = true;
     }
     
-    
+
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();
 
@@ -93,7 +97,7 @@ namespace ZombiePanic {
 		    if ( Client.All.Count <= 1 )
 		    {
 			    Instance.IsGameIsLaunch = false;
-			    break;
+			    break; 
 		    }
 	    }
     }
