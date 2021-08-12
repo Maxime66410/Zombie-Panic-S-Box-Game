@@ -24,7 +24,7 @@ partial class DeathmatchPlayer
 		if ( dressed ) return;
 		dressed = true;
 
-		if ( Rand.Int( 0, 3 ) != 1 )
+		if ( true )
 		{
 			var model = Rand.FromArray( new[]
 			{
@@ -44,12 +44,14 @@ partial class DeathmatchPlayer
 			pants.SetParent( this, true );
 			pants.EnableShadowInFirstPerson = true;
 			pants.EnableHideInFirstPerson = true;
+			
+			SetBodyGroup( "Legs", 1 );
 
 			if ( model.Contains( "dress" ) )
 				jacket = pants;
 		}
 
-		if ( Rand.Int( 0, 3 ) != 1 && jacket == null )
+		if ( true )
 		{
 			var model = Rand.FromArray( new[]
 			{
@@ -64,9 +66,19 @@ partial class DeathmatchPlayer
 			jacket.SetParent( this, true );
 			jacket.EnableShadowInFirstPerson = true;
 			jacket.EnableHideInFirstPerson = true;
+			
+			var propInfo = jacket.GetModel().GetPropData();
+			if ( propInfo.ParentBodyGroupName != null )
+			{
+				SetBodyGroup( propInfo.ParentBodyGroupName, propInfo.ParentBodyGroupValue );
+			}
+			else
+			{
+				SetBodyGroup( "Chest", 0 );
+			}
 		}
 
-		if ( Rand.Int( 0, 3 ) != 1 )
+		if ( true )
 		{
 			
 			var model = Rand.FromArray( new[]
@@ -80,9 +92,11 @@ partial class DeathmatchPlayer
 			shoes.SetParent( this, true );
 			shoes.EnableShadowInFirstPerson = true;
 			shoes.EnableHideInFirstPerson = true;
+			
+			SetBodyGroup( "Feet", 1 );
 		}
 
-		if ( Rand.Int( 0, 3 ) != 1 )
+		if ( true )
 		{
 			var model = Rand.FromArray( new[]
 			{
