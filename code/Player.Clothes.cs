@@ -29,10 +29,14 @@ partial class DeathmatchPlayer
 			var model = Rand.FromArray( new[]
 			{
 				"models/citizen_clothes/trousers/trousers.jeans.vmdl",
-				"models/citizen_clothes/dress/dress.kneelength.vmdl",
+				"models/citizen_clothes/trousers/trousers.lab.vmdl",
+				"models/citizen_clothes/trousers/trousers.police.vmdl",
+				"models/citizen_clothes/trousers/trousers.smart.vmdl",
+				"models/citizen_clothes/trousers/trousers.smarttan.vmdl",
 				"models/citizen/clothes/trousers_tracksuit.vmdl",
+				"models/citizen_clothes/trousers/trousers_tracksuitblue.vmdl",
+				"models/citizen_clothes/trousers/trousers_tracksuit.vmdl",
 				"models/citizen_clothes/shoes/shorts.cargo.vmdl",
-				"models/citizen_clothes/trousers/trousers.lab.vmdl"
 			} );
 
 			pants = new ClothingEntity();
@@ -51,7 +55,8 @@ partial class DeathmatchPlayer
 			{
 				"models/citizen_clothes/jacket/labcoat.vmdl",
 				"models/citizen_clothes/jacket/jacket.red.vmdl",
-				"models/citizen_clothes/gloves/gloves_workgloves.vmdl"
+				"models/citizen_clothes/jacket/jacket.tuxedo.vmdl",
+				"models/citizen_clothes/jacket/jacket_heavy.vmdl",
 			} );
 
 			jacket = new ClothingEntity();
@@ -63,8 +68,15 @@ partial class DeathmatchPlayer
 
 		if ( Rand.Int( 0, 3 ) != 1 )
 		{
+			
+			var model = Rand.FromArray( new[]
+			{
+				"models/citizen_clothes/shoes/trainers.vmdl",
+				"models/citizen_clothes/shoes/shoes.workboots.vmdl"
+			} );
+			
 			shoes = new ClothingEntity();
-			shoes.SetModel( "models/citizen_clothes/shoes/shoes.workboots.vmdl" );
+			shoes.SetModel( model );
 			shoes.SetParent( this, true );
 			shoes.EnableShadowInFirstPerson = true;
 			shoes.EnableHideInFirstPerson = true;
@@ -78,7 +90,17 @@ partial class DeathmatchPlayer
 				"models/citizen_clothes/hat/hat_woolly.vmdl",
 				"models/citizen_clothes/hat/hat_securityhelmet.vmdl",
 				"models/citizen_clothes/hair/hair_malestyle02.vmdl",
-				"models/citizen_clothes/hair/hair_femalebun.black.vmdl"
+				"models/citizen_clothes/hair/hair_femalebun.black.vmdl",
+				"models/citizen_clothes/hat/hat_beret.red.vmdl",
+				"models/citizen_clothes/hat/hat.tophat.vmdl",
+				"models/citizen_clothes/hat/hat_beret.black.vmdl",
+				"models/citizen_clothes/hat/hat_cap.vmdl",
+				"models/citizen_clothes/hat/hat_leathercap.vmdl",
+				"models/citizen_clothes/hat/hat_leathercapnobadge.vmdl",
+				"models/citizen_clothes/hat/hat_securityhelmetnostrap.vmdl",
+				"models/citizen_clothes/hat/hat_service.vmdl",
+				"models/citizen_clothes/hat/hat_uniform.police.vmdl",
+				"models/citizen_clothes/hat/hat_woollybobble.vmdl",
 			} );
 
 			hat = new ClothingEntity();

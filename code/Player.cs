@@ -12,9 +12,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	public bool SupressPickupNotices { get; private set; }
 	[Net] public bool IsZombie { get; set; }
 	[Net] public bool IsDead { get; set; }
-
-
-	DeathmatchGame Game;
+	
 	
 	public DeathmatchPlayer()
 	{
@@ -23,19 +21,18 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public override void Respawn()
 	{
-		if ( IsDead )
+		SetModel( "models/citizen/citizen.vmdl" );
+		
+		if ( DeathmatchGame.Instance.IsGameIsLaunch )
 		{
-			IsZombie = true;
+			if ( IsDead )
+			{
+				IsZombie = true;
+				SetMaterialGroup( 3 );
+				RenderColor = Color.Green;
+			}
 		}
 		
-		SetModel( "models/citizen/citizen.vmdl" );
-
-		if ( IsDead )
-		{
-			SetMaterialGroup( 3 );
-			RenderColor = Color.Green;
-		}
-
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
 		Camera = new FirstPersonCamera();
@@ -44,6 +41,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		EnableDrawing = true; 
 		EnableHideInFirstPerson = true;
 		EnableShadowInFirstPerson = true;
+		
 
 		Dress();
 		ClearAmmo();
@@ -100,11 +98,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		EnableAllCollisions = false;
 		EnableDrawing = false;
 
-		if ( Game.IsGameIsLaunch == true )
-		{
-			IsDead = true;
-		}
-		
+		IsDead = true;
 	}
 
 

@@ -17,9 +17,8 @@ namespace ZombiePanic {
   [Library("dm98", Title = "DM98")]
   public partial class DeathmatchGame : Game
   {
+	  [Net] public bool IsGameIsLaunch { get; private set; }
 
-	  [Net] public bool IsGameIsLaunch { get; private set; } = false;
-	  
 	  [Net]
     public Teams Teams {
       get;
@@ -40,18 +39,31 @@ namespace ZombiePanic {
 
       if (IsServer) {
         new DeathmatchHud();
-        
       }
     }
     
     public override void DoPlayerNoclip(Client player) {}
+
+    public void CheckMinimumPlayers()
+    {
+	    if ( Client.All.Count >= 2 )
+	    {
+		    StartGame();
+	    }
+    }
     
+    public void StartGame()
+    {
+	    Instance.IsGameIsLaunch = true;
+    }
     
     
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();
 
       ItemRespawn.Init();
+
+      LoopCheckPlayer(); 
     }
 
     public override void ClientJoined(Client cl) {
@@ -61,6 +73,29 @@ namespace ZombiePanic {
       player.Respawn();
 
       cl.Pawn = player;
+    }
+
+    public async Task LoopCheckPlayer()
+    {
+	    while ( true )
+	    {
+		    await Task.DelaySeconds( 1 );
+		    CheckMinimumPlayers();
+		    GameStade();
+	    }
+    }
+
+    public async Task GameStade()
+    {
+	    while ( true )
+	    {
+		    await Task.DelaySeconds( 1 );
+		    if ( Client.All.Count <= 1 )
+		    {
+			    Instance.IsGameIsLaunch = false;
+			    break;
+		    }
+	    }
     }
 
     public static void AutoJoinTeam(string teamName) {
