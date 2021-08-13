@@ -33,7 +33,6 @@ partial class DeathmatchPlayer
 				"models/citizen_clothes/trousers/trousers.police.vmdl",
 				"models/citizen_clothes/trousers/trousers.smart.vmdl",
 				"models/citizen_clothes/trousers/trousers.smarttan.vmdl",
-				"models/citizen/clothes/trousers_tracksuit.vmdl",
 				"models/citizen_clothes/trousers/trousers_tracksuitblue.vmdl",
 				"models/citizen_clothes/trousers/trousers_tracksuit.vmdl",
 				"models/citizen_clothes/shoes/shorts.cargo.vmdl",
