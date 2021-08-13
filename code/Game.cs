@@ -19,25 +19,20 @@ namespace ZombiePanic {
   public partial class DeathmatchGame : Game
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
+	  
+	  [Net] public virtual string RoundName => "";
 
 	  [Net]
-    public Teams Teams {
-      get;
-      protected set;
-    }
-
-    public static DeathmatchGame Instance
-    {
+	  public static DeathmatchGame Instance
+	  {
 	    get => Current as DeathmatchGame;
-    }
+	  }
     public DeathmatchGame() {
       //
       // Create the HUD entity. This is always broadcast to all clients
       // and will create the UI panels clientside. It's accessible 
       // globally via Hud.Current, so we don't need to store it.
       //
-      Teams = new Teams();
-
       if (IsServer) {
         new DeathmatchHud();
       }
@@ -53,6 +48,7 @@ namespace ZombiePanic {
 		    {
 			    StartGame();
 		    }
+
 	    }
     }
     
@@ -158,44 +154,7 @@ namespace ZombiePanic {
 		    }
 	    }
     }
-
-    public static void AutoJoinTeam(string teamName) {
-     	Client target = ConsoleSystem.Caller;
-	  
-		if(target == null || Current is not DeathmatchGame deathmatchgame)
-		{
-			return;
-		}
-
-		if(teamName == "auto")
-		{
-			if(deathmatchgame.Teams.AutoAssignClient(target) && Host.IsServer)
-			{
-				return;
-			}
-		}
-
-		Team team;
-		switch (teamName)
-		{
-			case "Survivor":
-				team = Team.Survivor;
-				break;
-			case "Zombie":
-				team = Team.Zombie; 
-				break;
-			default:
-				return;
-		}
-    }
-
-	public static void TeamClassChange(Client target)
-	{
-		if(target == null || Current is not DeathmatchGame deathmatchgame)
-		{
-			return;
-		}
-	}
+    
 
   }
 
