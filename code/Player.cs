@@ -38,7 +38,6 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				SetMaterialGroup( 1 );
 				RenderColor = Color.Green;
 				Inventory.DeleteContents();
-				Inventory.Add( new ZombieHand(), true );
 			}
 		}
 		else
@@ -77,21 +76,16 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			GiveAmmo( AmmoType.Buckshot, 8 );
 			GiveAmmo( AmmoType.Crossbow, 4 );
 		}
-		else
+
+		if ( IsZombie )
 		{
 			Inventory.Add( new ZombieHand(), true );
+			GiveAmmo( AmmoType.Pistol, 100 );
 		}
 
 		SupressPickupNotices = false;
-
-		if ( !IsZombie )
-		{
-			Health = 100;
-		}
-		else
-		{
-			Health = 250;
-		}
+		
+		Health = 100;
 
 		IsDead = false;
 		

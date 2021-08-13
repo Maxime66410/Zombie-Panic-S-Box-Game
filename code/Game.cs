@@ -19,13 +19,10 @@ namespace ZombiePanic {
   public partial class DeathmatchGame : Game
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
-	  
-	  [Net] public virtual string RoundName => "";
 
-	  [Net]
 	  public static DeathmatchGame Instance
-	  {
-	    get => Current as DeathmatchGame;
+	  { 
+		  get => Current as DeathmatchGame;
 	  }
     public DeathmatchGame() {
       //
@@ -48,7 +45,6 @@ namespace ZombiePanic {
 		    {
 			    StartGame();
 		    }
-
 	    }
     }
     
