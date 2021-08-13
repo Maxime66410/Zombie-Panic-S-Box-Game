@@ -19,6 +19,8 @@ namespace ZombiePanic {
   public partial class DeathmatchGame : Game
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
+	  
+	//  [Net] public TimeRound Round { get; private set; }
 
 	  public static DeathmatchGame Instance
 	  { 
@@ -53,8 +55,13 @@ namespace ZombiePanic {
 	    Instance.IsGameIsLaunch = true;
 	    Log.Info(Instance.IsGameIsLaunch);
 	    OnStartGame();
+	    
     }
-    
+
+    /*public void CheckRound(TimeRound round)
+    {
+	    Round = round;
+    }*/
 
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();
