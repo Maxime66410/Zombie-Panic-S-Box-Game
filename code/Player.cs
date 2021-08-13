@@ -31,6 +31,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				SetMaterialGroup( 1 );
 				RenderColor = Color.Green;
 			}
+
+			if ( this.Tags.Has( "zombie" ) )
+			{
+				IsZombie = true;
+				SetMaterialGroup( 1 );
+				RenderColor = Color.Green;
+				Inventory.DeleteContents();
+				Inventory.Add( new ZombieHand(), true );
+			}
 		}
 		else
 		{
@@ -189,9 +198,11 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public override void StartTouch( Entity other )
 	{
-		if ( timeSinceDropped < 1 ) return;
-
-		base.StartTouch( other );
+		if ( !IsZombie )
+		{
+			if ( timeSinceDropped < 1 ) return;
+			base.StartTouch( other );
+		}
 	}
 
 	Rotation lastCameraRot = Rotation.Identity;
