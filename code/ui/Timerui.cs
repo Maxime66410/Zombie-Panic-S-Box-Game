@@ -5,6 +5,8 @@ using Sandbox.UI.Construct;
 public class Timerui : Panel
 {
 	public Label Timer;
+
+	Game game;
 	
 	public Timerui()
 	{
@@ -16,6 +18,6 @@ public class Timerui : Panel
 	{
 		var player = Local.Pawn;
 		if ( player == null ) return;
-		
+
 	}
 }

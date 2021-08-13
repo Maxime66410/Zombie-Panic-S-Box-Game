@@ -20,6 +20,8 @@ namespace ZombiePanic {
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
 	  
+	  [Net] public int RoundDuration { get; set; };
+	  
 	//  [Net] public TimeRound Round { get; private set; }
 
 	  public static DeathmatchGame Instance
@@ -53,16 +55,19 @@ namespace ZombiePanic {
     public void StartGame()
     {
 	    Instance.IsGameIsLaunch = true;
+	    Instance.RoundDuration = 600;
 	    Log.Info(Instance.IsGameIsLaunch);
 	    OnStartGame();
-	    
     }
 
-    /*public void CheckRound(TimeRound round)
+    public async Task WaitToStart()
     {
-	    Round = round;
-    }*/
-
+	    while ( true )
+	    {
+		    await Task.DelaySeconds( 1 );
+	    }
+    }
+    
     public override void PostLevelLoaded() {
       base.PostLevelLoaded();
 
@@ -87,6 +92,20 @@ namespace ZombiePanic {
 		    await Task.DelaySeconds( 1 );
 		    CheckMinimumPlayers();
 		    GameStade();
+
+		    if ( Instance.RoundDuration >= 1 )
+		    {
+			    Instance.RoundDuration--;
+			    CheckStatsGame();
+		    }
+
+		    Log.Info( Instance.RoundDuration );
+
+		    if ( Instance.RoundDuration <= 0 )
+		    {
+			    Instance.RoundDuration = 0;
+			    CheckStatsGame();
+		    }
 	    }
     }
 
@@ -95,6 +114,7 @@ namespace ZombiePanic {
 	    while ( true )
 	    {
 		    await Task.DelaySeconds( 1 );
+		    
 		    if ( Client.All.Count <= 1 )
 		    {
 			    if ( Instance.IsGameIsLaunch )
@@ -119,7 +139,7 @@ namespace ZombiePanic {
 		    {
 			    continue;
 		    }
-		    
+
 		    player.Respawn();
 	    }
 	    
@@ -148,12 +168,31 @@ namespace ZombiePanic {
     {
 	    if ( Instance.IsGameIsLaunch == true )
 	    {
+		    var alivePlayers = 0;
+
 		    foreach ( Client cls in Client.All )
 		    {
 			    if ( cls.Pawn is not DeathmatchPlayer player )
 			    {
 				    continue;
 			    }
+
+			    if ( !player.IsDead && !player.IsZombie)
+			    {
+				    alivePlayers += 1;
+			    }
+		    }
+
+		    if ( alivePlayers == 0 )
+		    {
+			    Instance.IsGameIsLaunch = false;
+			    OnFinishGame();
+		    }
+
+		    if ( alivePlayers >= 1 && Instance.RoundDuration == 0 )
+		    {
+			    Instance.IsGameIsLaunch = false;
+			    OnFinishGame();
 		    }
 	    }
     }

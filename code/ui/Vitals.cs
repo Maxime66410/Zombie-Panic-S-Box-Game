@@ -12,7 +12,8 @@ public class Vitals : Panel
 	public Vitals()
 	{
 		Health = Add.Label( "100", "health" );
-		Team = Add.Label( "" );
+		Team = Add.Label( "", "team" );
+		Team.SetClass( "team", true );
 	}
 
 	public override void Tick()
@@ -23,6 +24,13 @@ public class Vitals : Panel
 		Health.Text = $"{player.Health.CeilToInt()}";
 		Health.SetClass( "danger", player.Health < 40.0f );
 
-		//Team.SetClass( "team", player.Team );
+		if ( player.Tags.Has( "zombie" ) )
+		{
+			Team.Text = "Zombie";
+			return;
+		}
+
+		Team.Text = "Human";
+
 	}
 }
