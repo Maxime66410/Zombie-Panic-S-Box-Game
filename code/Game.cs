@@ -20,6 +20,10 @@ namespace ZombiePanic {
   {
 	  [Net] public bool IsGameIsLaunch { get; private set; }
 	  
+	  [Net] public bool PreparingGame { get; private set; }
+	  
+	  [Net] public bool InialiseGameEnd { get; private set; }
+	  
 	  [Net] public int RoundDuration { get; set; };
 	  
 	//  [Net] public TimeRound Round { get; private set; }
@@ -47,7 +51,7 @@ namespace ZombiePanic {
 	    {
 		    if ( Client.All.Count >= 2 )
 		    {
-			    StartGame();
+			    PreparingGames();
 		    }
 	    }
     }
@@ -56,15 +60,41 @@ namespace ZombiePanic {
     {
 	    Instance.IsGameIsLaunch = true;
 	    Instance.RoundDuration = 600;
+	    Instance.PreparingGame = false;
 	    Log.Info(Instance.IsGameIsLaunch);
 	    OnStartGame();
     }
 
+
+    public void PreparingGames()
+    {
+	    if ( Instance.PreparingGame == false && Instance.InialiseGameEnd == false)
+	    {
+		    Instance.PreparingGame = true;
+		    Instance.RoundDuration = 30;
+	    }
+    }
+    
     public async Task WaitToStart()
     {
 	    while ( true )
 	    {
 		    await Task.DelaySeconds( 1 );
+		    if ( Instance.PreparingGame == true )
+		    {
+			    if ( Instance.RoundDuration >= 1 )
+			    {
+				    Instance.RoundDuration--;
+			    }
+
+			    Log.Info( Instance.RoundDuration );
+		    
+			    if ( Instance.RoundDuration <= 0 )
+			    {
+				    Instance.RoundDuration = 0;
+				    StartGame();
+			    }
+		    }
 	    }
     }
     
@@ -73,7 +103,9 @@ namespace ZombiePanic {
 
       ItemRespawn.Init();
 
-      LoopCheckPlayer(); 
+      LoopCheckPlayer();
+      WaitToStart();
+      OnFinishedGamePreparing();
     }
 
     public override void ClientJoined(Client cl) {
@@ -91,20 +123,23 @@ namespace ZombiePanic {
 	    {
 		    await Task.DelaySeconds( 1 );
 		    CheckMinimumPlayers();
-		    GameStade();
-
-		    if ( Instance.RoundDuration >= 1 )
+		    if ( Instance.IsGameIsLaunch == true  && Instance.InialiseGameEnd == false)
 		    {
-			    Instance.RoundDuration--;
-			    CheckStatsGame();
-		    }
+			    GameStade();
 
-		    //Log.Info( Instance.RoundDuration );
+			    if ( Instance.RoundDuration >= 1 )
+			    {
+				    Instance.RoundDuration--;
+				    CheckStatsGame();
+			    }
 
-		    if ( Instance.RoundDuration <= 0 )
-		    {
-			    Instance.RoundDuration = 0;
-			    CheckStatsGame();
+			    Log.Info( Instance.RoundDuration );
+
+			    if ( Instance.RoundDuration <= 0 )
+			    {
+				    Instance.RoundDuration = 0;
+				    CheckStatsGame();
+			    }
 		    }
 	    }
     }
@@ -147,6 +182,7 @@ namespace ZombiePanic {
 
     public void OnFinishGame()
     {
+	    Instance.InialiseGameEnd = false;
 	    
 	    foreach ( Client client in Client.All )
 	    {
@@ -186,15 +222,44 @@ namespace ZombiePanic {
 		    if ( alivePlayers == 0 )
 		    {
 			    Instance.IsGameIsLaunch = false;
-			    OnFinishGame();
+			    OnFinishedUpdateValues();
 			    Log.Info( "Zombies won !" );
 		    }
 
 		    if ( alivePlayers >= 1 && Instance.RoundDuration == 0 )
 		    {
 			    Instance.IsGameIsLaunch = false;
-			    OnFinishGame();
+			    OnFinishedUpdateValues();
 			    Log.Info( "Humans won !" );
+		    }
+	    }
+    }
+
+    public void OnFinishedUpdateValues()
+    {
+	    Instance.RoundDuration = 10;
+	    Instance.InialiseGameEnd = true;
+    }
+
+    public async Task OnFinishedGamePreparing()
+    {
+	    while ( true )
+	    {
+		    await Task.DelaySeconds( 1 );
+		    if ( Instance.InialiseGameEnd == true )
+		    {
+			    if ( Instance.RoundDuration >= 1 )
+			    {
+				    Instance.RoundDuration--;
+			    }
+
+			    Log.Info( Instance.RoundDuration );
+
+			    if ( Instance.RoundDuration <= 0 )
+			    {
+				    Instance.RoundDuration = 0;
+				    OnFinishGame();
+			    }
 		    }
 	    }
     }

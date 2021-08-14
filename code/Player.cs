@@ -23,7 +23,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	{
 		SetModel( "models/citizen/citizen.vmdl" );
 		
-		if ( DeathmatchGame.Instance.IsGameIsLaunch )
+		if ( DeathmatchGame.Instance.IsGameIsLaunch  || DeathmatchGame.Instance.InialiseGameEnd)
 		{
 			if ( IsDead )
 			{
@@ -48,6 +48,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			if ( IsZombie )
 			{
 				ZombieSpawnSound();
+				this.Tags.Add( "zombie" );
 			}
 
 		}
