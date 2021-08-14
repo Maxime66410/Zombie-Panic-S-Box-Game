@@ -123,6 +123,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		Inventory.DeleteContents();
 
 		BecomeRagdollOnClient( LastDamage.Force, GetHitboxBone( LastDamage.HitboxIndex ) );
+		
+		GetClientOwner().SetScore("deaths", GetClientOwner().GetScore<int>("deaths", 0) + 1);
+
+		var LasAttacker = LastAttacker;
+
+		if ( LasAttacker != null )
+		{
+			LasAttacker.GetClientOwner().SetScore("kills", LasAttacker.GetClientOwner().GetScore<int>("kills", 0) + 1);
+		}
 
 		Controller = null;
 		Camera = new SpectateRagdollCamera();

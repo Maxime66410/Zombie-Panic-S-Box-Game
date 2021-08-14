@@ -84,6 +84,7 @@ partial class DeathmatchPlayer
 			{
 				"models/citizen_clothes/shoes/trainers.vmdl",
 				"models/citizen_clothes/shoes/shoes.workboots.vmdl"
+				
 			} );
 			
 			shoes = new ClothingEntity();
@@ -114,6 +115,9 @@ partial class DeathmatchPlayer
 				"models/citizen_clothes/hat/hat_service.vmdl",
 				"models/citizen_clothes/hat/hat_uniform.police.vmdl",
 				"models/citizen_clothes/hat/hat_woollybobble.vmdl",
+				"models/citizen_clothes/hair/hair_femalebun.blonde.vmdl",
+				"models/citizen_clothes/hair/hair_femalebun.brown.vmdl",
+				"models/citizen_clothes/hair/hair_femalebun.red.vmdl"
 			} );
 
 			hat = new ClothingEntity();
