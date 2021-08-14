@@ -99,7 +99,7 @@ namespace ZombiePanic {
 			    CheckStatsGame();
 		    }
 
-		    Log.Info( Instance.RoundDuration );
+		    //Log.Info( Instance.RoundDuration );
 
 		    if ( Instance.RoundDuration <= 0 )
 		    {
@@ -187,12 +187,14 @@ namespace ZombiePanic {
 		    {
 			    Instance.IsGameIsLaunch = false;
 			    OnFinishGame();
+			    Log.Info( "Zombies won !" );
 		    }
 
 		    if ( alivePlayers >= 1 && Instance.RoundDuration == 0 )
 		    {
 			    Instance.IsGameIsLaunch = false;
 			    OnFinishGame();
+			    Log.Info( "Humans won !" );
 		    }
 	    }
     }

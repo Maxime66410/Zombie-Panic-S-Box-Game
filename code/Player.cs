@@ -39,6 +39,16 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				RenderColor = Color.Green;
 				Inventory.DeleteContents();
 			}
+
+			if ( !IsZombie )
+			{
+				HumanSpawnSound();
+			}
+			else
+			{
+				ZombieSpawnSound();
+			}
+			
 		}
 		else
 		{
@@ -95,6 +105,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	{
 		base.OnKilled();
 
+		if ( !IsZombie )
+		{
+			HumanDieSound();
+		}
+		else
+		{
+			ZombieDieSound();
+		}
+		
 		if ( !IsZombie )
 		{
 			Inventory.DropActive();
@@ -311,5 +330,139 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		//DebugOverlay.Sphere( pos, 5.0f, Color.Red, false, 50.0f );
 
 		DamageIndicator.Current?.OnHit( pos );
+	}
+
+	public void HumanSpawnSound()
+	{
+		
+	}
+
+	public void ZombieSpawnSound()
+	{
+		Random rnd = new Random();
+
+		var RandomSound = rnd.Next( 0, 11 );
+		
+		if (RandomSound == 0)
+		{
+			PlaySound( "zombiespawn1.spawn");
+		}
+		if (RandomSound == 1)
+		{
+			PlaySound( "zombiespawn2.spawn");
+		}
+		if (RandomSound == 2)
+		{
+			PlaySound( "zombiespawn3.spawn");
+		}
+		if (RandomSound == 3)
+		{
+			PlaySound( "zombiespawn4.spawn");
+		}
+		if (RandomSound == 4)
+		{
+			PlaySound( "zombiespawn5.spawn");
+		}
+		if (RandomSound == 5)
+		{
+			PlaySound( "zombiespawn6.spawn");
+		}
+		if (RandomSound == 6)
+		{
+			PlaySound( "zombiespawn7.spawn");
+		}
+		if (RandomSound == 7)
+		{
+			PlaySound( "zombiespawn8.spawn");
+		}
+		if (RandomSound == 8)
+		{
+			PlaySound( "zombiespawn9.spawn");
+		}
+		if (RandomSound == 9)
+		{
+			PlaySound( "zombiespawn10.spawn");
+		}
+		if (RandomSound == 10)
+		{
+			PlaySound( "zombiespawn11.spawn");
+		}
+		if (RandomSound == 11)
+		{
+			PlaySound( "zombiespawn12.spawn");
+		}
+	}
+
+	public void ZombieDieSound()
+	{
+		Random rnd = new Random();
+
+		var RandomSound = rnd.Next( 0, 14 );
+		
+		if (RandomSound == 0)
+		{
+			PlaySound( "zombiedeath1.death");
+		}
+		if (RandomSound == 1)
+		{
+			PlaySound( "zombiedeath2.death");
+		}
+		if (RandomSound == 2)
+		{
+			PlaySound( "zombiedeath3.death");
+		}
+		if (RandomSound == 3)
+		{
+			PlaySound( "zombiedeath4.death");
+		}
+		if (RandomSound == 4)
+		{
+			PlaySound( "zombiedeath5.death");
+		}
+		if (RandomSound == 5)
+		{
+			PlaySound( "zombiedeath6.death");
+		}
+		if (RandomSound == 6)
+		{
+			PlaySound( "zombiedeath7.death");
+		}
+		if (RandomSound == 7)
+		{
+			PlaySound( "zombiedeath8.death");
+		}
+		if (RandomSound == 8)
+		{
+			PlaySound( "zombiedeath9.death");
+		}
+		if (RandomSound == 9)
+		{
+			PlaySound( "zombiedeath10.death");
+		}
+		if (RandomSound == 10)
+		{
+			PlaySound( "zombiedeath11.death");
+		}
+		if (RandomSound == 11)
+		{
+			PlaySound( "zombiedeath12.death");
+		}
+		if (RandomSound == 12)
+		{
+			PlaySound( "zombiedeath13.death");
+		}
+		if (RandomSound == 13)
+		{
+			PlaySound( "zombiedeath14.death");
+		}
+		if (RandomSound == 14)
+		{
+			PlaySound( "zombiedeath15.death");
+		}
+	}
+
+	public void HumanDieSound()
+	{
+		
 	}
 }
