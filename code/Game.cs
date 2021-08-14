@@ -24,10 +24,10 @@ namespace ZombiePanic {
 	  
 	  [Net] public bool InialiseGameEnd { get; private set; }
 	  
-	  [Net] public int RoundDuration { get; set; };
+	  [Net] public int RoundDuration { get; set; }
 	  
-	//  [Net] public TimeRound Round { get; private set; }
-
+	  [Net] public string WhoWin { get; set; }
+	  
 	  public static DeathmatchGame Instance
 	  { 
 		  get => Current as DeathmatchGame;
@@ -63,6 +63,8 @@ namespace ZombiePanic {
 	    Instance.PreparingGame = false;
 	    Log.Info(Instance.IsGameIsLaunch);
 	    OnStartGame();
+	    Sound.FromScreen("roundready.round");
+	    
     }
 
 
@@ -70,6 +72,7 @@ namespace ZombiePanic {
     {
 	    if ( Instance.PreparingGame == false && Instance.InialiseGameEnd == false)
 	    {
+		    WhoWin = "";
 		    Instance.PreparingGame = true;
 		    Instance.RoundDuration = 30;
 	    }
@@ -93,6 +96,16 @@ namespace ZombiePanic {
 			    {
 				    Instance.RoundDuration = 0;
 				    StartGame();
+			    }
+			    
+			    if ( Client.All.Count <= 1 )
+			    {
+				    if ( Instance.PreparingGame )
+				    {
+					    Instance.PreparingGame = false;
+					    OnFinishGame();
+				    }
+				    break; 
 			    }
 		    }
 	    }
@@ -223,14 +236,16 @@ namespace ZombiePanic {
 		    {
 			    Instance.IsGameIsLaunch = false;
 			    OnFinishedUpdateValues();
-			    Log.Info( "Zombies won !" );
+			    WhoWin = "Zombies Won !";
+			    SoundZombieWin();
 		    }
 
 		    if ( alivePlayers >= 1 && Instance.RoundDuration == 0 )
 		    {
 			    Instance.IsGameIsLaunch = false;
 			    OnFinishedUpdateValues();
-			    Log.Info( "Humans won !" );
+			    WhoWin = "Humans Won !";
+			    SoundHumanWin();
 		    }
 	    }
     }
@@ -261,6 +276,50 @@ namespace ZombiePanic {
 				    OnFinishGame();
 			    }
 		    }
+	    }
+    }
+
+    public void SoundHumanWin()
+    {
+	    Random rnd = new Random();
+
+	    var RandomSound = rnd.Next( 0, 1 );
+
+	    if ( RandomSound == 0 )
+	    {
+		    Sound.FromScreen("roundendhuman1.round");
+	    }
+	    
+	    if ( RandomSound == 1 )
+	    {
+		    Sound.FromScreen("roundendhuman2.round");
+	    }
+    }
+
+    public void SoundZombieWin()
+    {
+	    Random rnd = new Random();
+
+	    var RandomSound = rnd.Next( 0, 3 );
+
+	    if ( RandomSound == 0 )
+	    {
+		    Sound.FromScreen("roundendzombie1.round");
+	    }
+	    
+	    if ( RandomSound == 1 )
+	    {
+		    Sound.FromScreen("roundendzombie2.round");
+	    }
+	    
+	    if ( RandomSound == 2 )
+	    {
+		    Sound.FromScreen("roundendzombie3.round");
+	    }
+	    
+	    if ( RandomSound == 3 )
+	    {
+		    Sound.FromScreen("roundendzombie4.round");
 	    }
     }
     

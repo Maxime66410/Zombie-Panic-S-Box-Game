@@ -18,6 +18,7 @@ public partial class DeathmatchHud : HudEntity<RootPanel>
 		RootPanel.AddChild<Vitals>();
 		RootPanel.AddChild<Ammo>();
 		RootPanel.AddChild<Timerui>();
+		RootPanel.AddChild<WhoWinui>();
 
 		RootPanel.AddChild<NameTags>();
 		RootPanel.AddChild<DamageIndicator>();

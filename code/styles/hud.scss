@@ -56,33 +56,48 @@ vitals
 
 timerui
 {
-	font-size: 64px;
+	position: absolute;
 	color: #ff0;
 	mix-blend-mode: lighten;
 	font-family: Roboto;
-	
-	label
+
+	Label
 	{
 
 		text-shadow: 0px 0px 20px #f70a;
 		
 		&.timer
 		{
-			margin-left: 55%;
 			top: 20px;
+			left: 900px;
 			color: rgb(156, 255, 64);
-			font-size: 48px;
+			font-size: 30px;
 		}
-
-		&.round
-		{
-			font-size: 15px;
-			top: 15px;
-			left: 15px;
-		}
-
 	}
 }
+
+whowinui
+{
+	position: absolute;
+	color: #ff0;
+	mix-blend-mode: lighten;
+	font-family: Roboto;
+
+	Label
+	{
+
+		text-shadow: 0px 0px 20px #f70a;
+
+		&.winwho
+		{
+			top: 500px;
+			left: 730px;
+			color: rgb(156, 255, 64);
+			font-size: 100px;
+		}
+	}
+}
+
 
 
 ammo
