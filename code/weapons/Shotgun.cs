@@ -39,7 +39,7 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		ShootEffects();
-		PlaySound( "rust_pumpshotgun.shoot" );
+		PlaySound( "fireshotgun.shoot" );
 
 		//
 		// Shoot the bullets
@@ -68,7 +68,7 @@ partial class Shotgun : BaseDmWeapon
 		// Tell the clients to play the shoot effects
 		//
 		DoubleShootEffects();
-		PlaySound( "rust_pumpshotgun.shootdouble" );
+		PlaySound( "fireshotgundouble.shoot" );
 
 		//
 		// Shoot the bullets
@@ -132,6 +132,8 @@ partial class Shotgun : BaseDmWeapon
 
 			AmmoClip += ammo;
 
+			PlaySound( "fireshotgunreloadsimple.reload" );
+			
 			if ( AmmoClip < ClipSize )
 			{
 				Reload();
@@ -139,6 +141,7 @@ partial class Shotgun : BaseDmWeapon
 			else
 			{
 				FinishReload();
+				PlaySound( "fireshotgunreloadfinish.reload" );
 			}
 		}
 	}

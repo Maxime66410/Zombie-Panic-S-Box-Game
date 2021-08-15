@@ -30,6 +30,7 @@ partial class Crossbow : BaseDmWeapon
 		}
 
 		ShootEffects();
+		PlaySound( "firecrowbow.shoot" );
 
 		if ( IsServer )
 		using ( Prediction.Off() )

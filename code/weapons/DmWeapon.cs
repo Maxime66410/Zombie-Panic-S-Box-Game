@@ -77,7 +77,7 @@ partial class BaseDmWeapon : BaseWeapon, IRespawnableEntity
 		}
 
 		IsReloading = true;
-
+		
 		(Owner as AnimEntity).SetAnimBool( "b_reload", true );
 
 		StartReloadEffects();
