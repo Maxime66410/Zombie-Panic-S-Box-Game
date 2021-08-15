@@ -73,7 +73,7 @@
 // 
 // ZombiePanic.DeathmatchGame : Sandbox.Game 
 // 
-@PointClass = zombiepanic : "This is the heart of the gamemode. It's responsible for creating the player and stuff."
+@PointClass = zombiepanic : ""
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."

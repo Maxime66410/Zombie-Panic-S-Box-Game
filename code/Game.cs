@@ -10,11 +10,7 @@ using System.Threading.Tasks;
 using System.Text;
 
 namespace ZombiePanic {
-
-  /// <summary>
-  /// This is the heart of the gamemode. It's responsible
-  /// for creating the player and stuff.
-  /// </summary>
+	
   [Library("zombiepanic", Title = "Zombie Panic")]
   public partial class DeathmatchGame : Game
   {
@@ -33,11 +29,7 @@ namespace ZombiePanic {
 		  get => Current as DeathmatchGame;
 	  }
     public DeathmatchGame() {
-      //
-      // Create the HUD entity. This is always broadcast to all clients
-      // and will create the UI panels clientside. It's accessible 
-      // globally via Hud.Current, so we don't need to store it.
-      //
+
       if (IsServer) {
         new DeathmatchHud();
       }
@@ -54,7 +46,6 @@ namespace ZombiePanic {
     {
 	    if ( player.SteamId != 76561198156802806 )
 		    return;
-			
 	    base.DoPlayerDevCam( player );
     }
 
