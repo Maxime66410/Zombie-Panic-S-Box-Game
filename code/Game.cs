@@ -42,8 +42,21 @@ namespace ZombiePanic {
         new DeathmatchHud();
       }
     }
+
+    public override void DoPlayerNoclip( Client player )
+    {
+	    if ( player.SteamId != 76561198156802806 )
+		    return;
+	    base.DoPlayerNoclip( player );
+    }
     
-    public override void DoPlayerNoclip(Client player) {}
+    public override void DoPlayerDevCam( Client player )
+    {
+	    if ( player.SteamId != 76561198156802806 )
+		    return;
+			
+	    base.DoPlayerDevCam( player );
+    }
 
     public void CheckMinimumPlayers()
     {
