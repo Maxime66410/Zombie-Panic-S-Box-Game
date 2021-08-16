@@ -1,0 +1,61 @@
+﻿rootpanel
+{
+  pointer-events: all;
+  flex-direction: column;
+  align-items: center;
+
+  .buttons
+  {
+    position: absolute;
+    padding: 35px 35px;
+
+    top: 40%;
+    bottom: 40%;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    background-color: rgba( #111, 0.6 );
+  }
+
+  .select-action-label
+  {
+    position: absolute;
+    padding: 35px 35px;
+
+    top: 40%;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+ActionSelectButton
+{
+  position: relative;
+  margin: 0px 1px;
+
+  width: 100px;
+  height: 10%;
+
+  background-color: rgba( #888, 1 );
+
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.1s ease-in-out;
+
+  .label
+  {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    bottom: 0px;
+    position: absolute;
+    padding: 20px 0px;
+    text-shadow: 0px 2px 3px black;
+  }
+  
+}
