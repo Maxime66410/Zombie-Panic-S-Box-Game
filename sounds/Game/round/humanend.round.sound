@@ -10,7 +10,8 @@
 		DistanceMax = 1000.0
 		Sounds = 
 		[
-			"sounds/game/round/round_end_zombie_01.vsnd",
+			"sounds/game/round/round_end_human_01.vsnd",
+			"sounds/game/round/round_end_human_02.vsnd",
 		]
 	}
 }
