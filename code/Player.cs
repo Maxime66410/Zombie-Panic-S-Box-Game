@@ -227,7 +227,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		{
 			if ( Input.Pressed(InputButton.Slot0) )
 			{
-				DeathmatchGame.ShowActionMenu(cl);
+				
 			}
 		}
 
@@ -431,13 +431,6 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public static void HumanAction(string nameOfAction)
 	{
-		if ( GenderType )
-		{
-			Log.Info(nameOfAction);
-		}
-		else
-		{
-			Log.Info(nameOfAction);
-		}
+		
 	}
 }

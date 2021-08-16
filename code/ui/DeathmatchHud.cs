@@ -4,6 +4,7 @@ using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System;
 using System.Threading.Tasks;
+using ZombiePanic.ui;
 
 [Library]
 public partial class DeathmatchHud : HudEntity<RootPanel>
