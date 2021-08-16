@@ -16,7 +16,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	
 	[Net] public bool AlreadyGender { get; set; }
 	
-	[Net] public static bool GenderType { get; set; }
+	[Net] public bool GenderType { get; set; }
 	
 	
 	public DeathmatchPlayer()
@@ -227,7 +227,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		{
 			if ( Input.Pressed(InputButton.Slot0) )
 			{
-				DeathmatchGame.ShowActionMenu(cl);
+			//	DeathmatchGame.ShowActionMenu(cl);
 			}
 		}
 
@@ -430,14 +430,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	}
 
 	public static void HumanAction(string nameOfAction)
-	{
-		if ( GenderType )
-		{
-			Log.Info(nameOfAction);
-		}
-		else
-		{
-			Log.Info(nameOfAction);
-		}
+	{ 
+		Log.Info(nameOfAction);
 	}
 }
