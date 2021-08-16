@@ -36,7 +36,7 @@ namespace ZombiePanic {
       if (IsServer) {
         new DeathmatchHud();
 
-        _actionCommand = new ActionCommand();
+       // _actionCommand = new ActionCommand();
       }
     }
 
