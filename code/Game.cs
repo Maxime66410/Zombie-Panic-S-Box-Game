@@ -25,6 +25,8 @@ namespace ZombiePanic {
 	  
 	  [Net] public string WhoWin { get; set; }
 	  
+	  [Net, OnChangedCallback] protected ActionCommand _actionCommand { get; set; }
+	  
 	  public static DeathmatchGame Instance
 	  { 
 		  get => Current as DeathmatchGame;
@@ -34,6 +36,7 @@ namespace ZombiePanic {
       if (IsServer) {
         new DeathmatchHud();
 
+       // _actionCommand = new ActionCommand();
       }
     }
 
@@ -333,8 +336,38 @@ namespace ZombiePanic {
 		    Sound.FromScreen("roundendzombie4.round");
 	    }
     }
-    
-    
+
+    public static void ShowActionMenu( Client target )
+    {
+	    if ( target == null || Current is not DeathmatchGame deathmatchGame)
+	    {
+		    return;
+	    }
+
+	    if ( ClientIsBot( target ) )
+	    {
+		    return;
+	    }
+
+	    if ( Host.IsServer )
+	    {
+		    deathmatchGame.ShowClientActionMenuUI(To.Single(target));
+	    }
+    }
+
+    [ClientRpc]
+    protected void ShowClientActionMenuUI()
+    {
+	    if ( _actionCommand.IsOpen )
+	    {
+		    _actionCommand?.Disable();
+	    }
+	    else
+	    {
+		    _actionCommand?.Enable();
+	    }
+    }
+
   }
 
 }
