@@ -7,15 +7,15 @@ namespace ZombiePanic.ui
 	public class ActionSelectButton : Button
 	{
 		protected string classAction_;
-		public ActionSelectButton( string actioname )
+		public ActionSelectButton( string actionname )
 		{
-			classAction_ = actioname;
+			classAction_ = actionname;
 
-			string buttonLabelText = actioname;
+			string buttonLabelText = actionname;
 
-			if ( actioname.Length != 0 )
+			if ( actionname.Length != 0 )
 			{
-				buttonLabelText = actioname.Remove( 0, 1 ).Insert( 0, actioname[0].ToString().ToUpper() );
+				buttonLabelText = actionname.Remove( 0, 1 ).Insert( 0, actionname[0].ToString().ToUpper() );
 			}
 
 			Add.Label( buttonLabelText, "Label" );
