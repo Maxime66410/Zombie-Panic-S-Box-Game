@@ -24,7 +24,7 @@ namespace ZombiePanic.ui
 
 			label.Text = "Select a Action";
 
-			foreach ( string actionName in ClassAction.AllAction )
+			foreach ( string actionName in ClassAction.AllActions )
 			{
 				buttonPanel_.AddChild( new ActionSelectButton( actionName ) );
 			}

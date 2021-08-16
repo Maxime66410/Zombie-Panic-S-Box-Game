@@ -5,7 +5,7 @@ namespace ZombiePanic.ui
 	[Library("class")]
 	public class ClassAction : Asset
 	{
-		public readonly static string[] AllAction = new string[]
+		public readonly static string[] AllActions = new string[]
 		{
 			"acknowledge",
 			"anger",
