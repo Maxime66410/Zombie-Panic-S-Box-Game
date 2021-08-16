@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Threading;
 using ZombiePanic;
+using ZombiePanic.ui;
 
 public partial class DeathmatchPlayer : Sandbox.Player
 {
@@ -15,7 +16,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	
 	[Net] public bool AlreadyGender { get; set; }
 	
-	[Net] public bool GenderType { get; set; }
+	[Net] public static bool GenderType { get; set; }
 	
 	
 	public DeathmatchPlayer()
@@ -222,6 +223,14 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			}
 		}
 
+		if ( !IsZombie )
+		{
+			if ( Input.Pressed(InputButton.Slot0) )
+			{
+				DeathmatchGame.ShowActionMenu(cl);
+			}
+		}
+
 		SimulateActiveChild( cl, ActiveChild );
 
 		//
@@ -417,6 +426,18 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		else
 		{
 			PlaySound( "humanfemaledeath.death"); 
+		}
+	}
+
+	public static void HumanAction(string nameOfAction)
+	{
+		if ( GenderType )
+		{
+			Log.Info(nameOfAction);
+		}
+		else
+		{
+			Log.Info(nameOfAction);
 		}
 	}
 }

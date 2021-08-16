@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Text;
+using ZombiePanic.ui;
 
 namespace ZombiePanic {
 	
@@ -24,6 +25,8 @@ namespace ZombiePanic {
 	  
 	  [Net] public string WhoWin { get; set; }
 	  
+	  [Net, OnChangedCallback] protected ActionCommand _actionCommand { get; set; }
+	  
 	  public static DeathmatchGame Instance
 	  { 
 		  get => Current as DeathmatchGame;
@@ -32,6 +35,8 @@ namespace ZombiePanic {
 
       if (IsServer) {
         new DeathmatchHud();
+
+        _actionCommand = new ActionCommand();
       }
     }
 
@@ -47,6 +52,11 @@ namespace ZombiePanic {
 	    if ( player.SteamId != 76561198156802806 )
 		    return;
 	    base.DoPlayerDevCam( player );
+    }
+    
+    public static bool ClientIsBot( Client client )
+    {
+	    return ( ( client.SteamId >> 52 ) & 0b1111 ) == 4;
     }
 
     public void CheckMinimumPlayers()
@@ -326,7 +336,37 @@ namespace ZombiePanic {
 		    Sound.FromScreen("roundendzombie4.round");
 	    }
     }
-    
+
+    public static void ShowActionMenu( Client target )
+    {
+	    if ( target == null || Current is not DeathmatchGame deathmatchGame)
+	    {
+		    return;
+	    }
+
+	    if ( ClientIsBot( target ) )
+	    {
+		    return;
+	    }
+
+	    if ( Host.IsServer )
+	    {
+		    deathmatchGame.ShowClientActionMenuUI(To.Single(target));
+	    }
+    }
+
+    [ClientRpc]
+    protected void ShowClientActionMenuUI()
+    {
+	    if ( _actionCommand.IsOpen )
+	    {
+		    _actionCommand?.Disable();
+	    }
+	    else
+	    {
+		    _actionCommand?.Enable();
+	    }
+    }
 
   }
 
