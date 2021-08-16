@@ -1,0 +1,70 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.15
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/zombies/pain/zcarrier_pain-0.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-1.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-10.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-11.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-12.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-13.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-14.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-15.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-16.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-17.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-18.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-19.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-2.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-20.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-21.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-22.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-23.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-24.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-25.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-26.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-27.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-28.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-29.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-3.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-30.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-31.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-32.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-33.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-34.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-35.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-36.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-37.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-38.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-39.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-4.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-40.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-41.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-42.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-43.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-44.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-45.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-46.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-47.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-48.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-49.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-5.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-50.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-51.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-52.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-53.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-54.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-6.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-7.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-8.vsnd",
+			"sounds/zombies/pain/zcarrier_pain-9.vsnd",
+		]
+	}
+}

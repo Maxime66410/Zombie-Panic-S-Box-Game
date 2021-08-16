@@ -343,6 +343,22 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		base.TakeDamage( info );
 
+		if ( !IsZombie )
+		{
+			if ( GenderType )
+			{
+				PlaySound( "humansmalepain.pain" );
+			}
+			else
+			{
+				PlaySound( "humansfemalepain.pain" );
+			}
+		}
+		else
+		{
+			PlaySound( "zombiepain.pain" );
+		}
+
 		if ( info.Attacker is DeathmatchPlayer attacker && attacker != this )
 		{
 			// Note - sending this only to the attacker!
