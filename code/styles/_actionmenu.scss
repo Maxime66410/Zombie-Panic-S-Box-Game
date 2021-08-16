@@ -1,0 +1,75 @@
+﻿ActionMenuOpen{
+
+  background-color: #000c;
+  border: 1px solid #1b1b1b;
+  border-radius: 8px;
+
+  font-family: Poppins;
+  min-width: 200px;
+  width: 600px;
+  max-width: 800px;
+  min-height: 200px;
+  height: 400px;
+  max-height: 800px;
+  left: 35%;
+  top: 35%;
+  //transform: translateX(-50%) translateY(-50%); // waiting for https://github.com/Facepunch/sbox-issues/issues/551
+  position: absolute;
+
+  color: #fafafa;
+  font-family: Poppins;
+  font-weight: 500;
+  pointer-events: all;
+  flex-direction: column;
+
+  font-size: 16px;
+  align-items: center;
+  padding: 10px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px black;
+  
+  opacity: 0;
+  
+  &.actives
+  {
+    opacity: 1;
+  }
+
+  &.buttonss
+  {
+    position: absolute;
+    padding: 50px 50px;
+
+    top: 30%;
+    bottom: 20%;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    background-color: rgba( #111, 0.6 );
+  }
+
+  &.select-actions-label
+  {
+    position: absolute;
+    padding: 35px 35px;
+
+    top: 20%;
+
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+
+  &.label
+  {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    bottom: 10px;
+    position: absolute;
+    padding: 35px 0px;
+    text-shadow: 0px 2px 3px black;
+  }
+}
