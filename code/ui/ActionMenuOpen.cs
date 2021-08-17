@@ -108,7 +108,8 @@ namespace ZombiePanic.ui
 		{
 			base.OnClick( e );
 
-			new DeathmatchPlayer().HumanAction(ChooseAction);
+			DeathmatchPlayer.ActionName = ChooseAction;
+			Log.Info(DeathmatchPlayer.ActionName);
 		}
 
 		public static void Checkclient( Client target )

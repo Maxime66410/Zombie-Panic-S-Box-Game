@@ -19,6 +19,8 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	
 	[Net] public static bool GenderType { get; set; }
 
+	[Net] public static string ActionName { get; set; } = "none";
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -221,13 +223,16 @@ public partial class DeathmatchPlayer : Sandbox.Player
 					SwitchToBestWeapon();
 				}
 			}
-		}
-
-		if ( !IsZombie )
-		{
+			
 			if ( Input.Pressed(InputButton.Menu) )
 			{
 				ActionMenuOpen.Checkclient(cl);
+			}
+			
+			if ( ActionName != "none" )
+			{
+				HumanAction(ActionName);
+				Log.Info(ActionName);
 			}
 		}
 
@@ -435,12 +440,13 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		{
 			PlaySound(nameOfAction + "males.action" );
 			Log.Info(nameOfAction + "males.action");
+			ActionName = "none";
 		}
 		else
 		{
 			PlaySound(nameOfAction + "females.action" );
 			Log.Info(nameOfAction + "females.action");
-			
+			ActionName = "none";
 		}
 	}
 }
