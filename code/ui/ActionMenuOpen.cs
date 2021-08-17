@@ -6,8 +6,8 @@ namespace ZombiePanic.ui
 {
 	public class ActionMenuOpen : Panel
 	{
-		
-		public bool IsOpen;
+
+		public static bool IsOpen;
 
 		public string ChooseAction;
 		public Button acknowledgebtn { get; private set; }
@@ -36,42 +36,42 @@ namespace ZombiePanic.ui
 
 		public void CreatedButton()
 		{
-			acknowledgebtn = new Button( "acknowledge", "", () =>  ChooseAction = "acknowledge");
-			acknowledgebtn.AddClass("buttonss");
+			acknowledgebtn = new Button( "acknowledge", "", () => ChooseAction = "acknowledge" );
+			acknowledgebtn.AddClass( "buttonss" );
 			angerbtn = new Button( "anger", "", () => ChooseAction = "anger" );
-			angerbtn.AddClass("buttonss");
+			angerbtn.AddClass( "buttonss" );
 			campingbtn = new Button( "camping", "", () => ChooseAction = "camping" );
-			campingbtn.AddClass("buttonss");
+			campingbtn.AddClass( "buttonss" );
 			coverbtn = new Button( "cover", "", () => ChooseAction = "cover" );
-			coverbtn.AddClass("buttonss");
+			coverbtn.AddClass( "buttonss" );
 			declinebtn = new Button( "decline", "", () => ChooseAction = "decline" );
-			declinebtn.AddClass("buttonss");
+			declinebtn.AddClass( "buttonss" );
 			escapebtn = new Button( "escape", "", () => ChooseAction = "escape" );
-			escapebtn.AddClass("buttonss");
+			escapebtn.AddClass( "buttonss" );
 			firebtn = new Button( "fire", "", () => ChooseAction = "fire" );
-			firebtn.AddClass("buttonss");
+			firebtn.AddClass( "buttonss" );
 			gobtn = new Button( "go", "", () => ChooseAction = "go" );
-			gobtn.AddClass("buttonss");
+			gobtn.AddClass( "buttonss" );
 			holdbtn = new Button( "hold", "", () => ChooseAction = "hold" );
-			holdbtn.AddClass("buttonss");
+			holdbtn.AddClass( "buttonss" );
 			keepmovingbtn = new Button( "keepmoving", "", () => ChooseAction = "keepmoving" );
-			keepmovingbtn.AddClass("buttonss");
+			keepmovingbtn.AddClass( "buttonss" );
 			needammobtn = new Button( "needammo", "", () => ChooseAction = "needammo" );
-			needammobtn.AddClass("buttonss");
+			needammobtn.AddClass( "buttonss" );
 			needhealthbtn = new Button( "needhealth", "", () => ChooseAction = "needhealth" );
-			needhealthbtn.AddClass("buttonss");
+			needhealthbtn.AddClass( "buttonss" );
 			needweaponbtn = new Button( "needweapon", "", () => ChooseAction = "needweapon" );
-			needweaponbtn.AddClass("buttonss");
+			needweaponbtn.AddClass( "buttonss" );
 			positivestatusbtn = new Button( "positivestatus", "", () => ChooseAction = "positivestatus" );
-			positivestatusbtn.AddClass("buttonss");
+			positivestatusbtn.AddClass( "buttonss" );
 			praisebtn = new Button( "praise", "", () => ChooseAction = "praise" );
-			praisebtn.AddClass("buttonss");
+			praisebtn.AddClass( "buttonss" );
 			statusreportbtn = new Button( "statusreport", "", () => ChooseAction = "statusreport" );
-			statusreportbtn.AddClass("buttonss");
+			statusreportbtn.AddClass( "buttonss" );
 			tauntsbtn = new Button( "taunts", "", () => ChooseAction = "taunts" );
-			tauntsbtn.AddClass("buttonss");
+			tauntsbtn.AddClass( "buttonss" );
 			thanksbtn = new Button( "thanks", "", () => ChooseAction = "thanks" );
-			thanksbtn.AddClass("buttonss");
+			thanksbtn.AddClass( "buttonss" );
 
 
 			AddChild( acknowledgebtn );
@@ -97,28 +97,49 @@ namespace ZombiePanic.ui
 		public override void Tick()
 		{
 			base.Tick();
-			
+
 			SetClass( "actives", IsOpen );
-			
+
 			var player = Local.Pawn as Player;
 			if ( player == null ) return;
 		}
 
 		protected override void OnClick( MousePanelEvent e )
 		{
-			base.OnClick(e);
-			
-			Log.Info(ChooseAction);
+			base.OnClick( e );
+
+			new DeathmatchPlayer().HumanAction(ChooseAction);
 		}
 
-		[Event.BuildInput]
-		public void ProcessClientInput( InputBuilder input )
+		public static void Checkclient( Client target )
 		{
-			if ( input.Pressed( InputButton.Menu ) )
+			if ( target == null )
 			{
-				IsOpen = !IsOpen;
+				return;
+			}
+
+			if ( Host.IsClient )
+			{
+				CheckMenu();
 			}
 		}
 
+		public static void CheckMenu()
+		{
+			IsOpen = !IsOpen;
+		}
+		
+
+		/*[Event.BuildInput]
+		public void ProcessClientInput( InputBuilder input )
+		{
+			if ( !Players.IsZombie )
+			{
+				if ( input.Pressed( InputButton.Menu ) )
+				{
+					IsOpen = !IsOpen;
+				}
+			}
+		}*/
 	}
 }

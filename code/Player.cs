@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -17,8 +18,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	[Net] public bool AlreadyGender { get; set; }
 	
 	[Net] public static bool GenderType { get; set; }
-	
-	
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -225,9 +225,9 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		if ( !IsZombie )
 		{
-			if ( Input.Pressed(InputButton.Slot0) )
+			if ( Input.Pressed(InputButton.Menu) )
 			{
-				
+				ActionMenuOpen.Checkclient(cl);
 			}
 		}
 
@@ -429,8 +429,18 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		}
 	}
 
-	public static void HumanAction(string nameOfAction)
+	public void HumanAction(string nameOfAction)
 	{
-		
+		if ( GenderType )
+		{
+			PlaySound(nameOfAction + "males.action" );
+			Log.Info(nameOfAction + "males.action");
+		}
+		else
+		{
+			PlaySound(nameOfAction + "females.action" );
+			Log.Info(nameOfAction + "females.action");
+			
+		}
 	}
 }

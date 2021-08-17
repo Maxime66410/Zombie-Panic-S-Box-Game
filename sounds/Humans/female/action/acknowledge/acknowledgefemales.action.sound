@@ -1,0 +1,30 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.2
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/humans/female/action/acknowledge/acknowledge-0.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-1.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-10.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-11.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-12.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-13.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-14.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-2.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-3.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-4.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-5.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-6.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-7.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-8.vsnd",
+			"sounds/humans/female/action/acknowledge/acknowledge-9.vsnd",
+		]
+	}
+}

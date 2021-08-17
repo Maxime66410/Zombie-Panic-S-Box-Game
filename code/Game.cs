@@ -25,7 +25,6 @@ namespace ZombiePanic {
 
 		[Net] public string WhoWin { get; set; }
 
-
 		public static DeathmatchGame Instance
 		{
 			get => Current as DeathmatchGame;
