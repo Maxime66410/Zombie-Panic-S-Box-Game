@@ -1,0 +1,38 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.0
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/humans/female/action/anger/anger-0.vsnd",
+			"sounds/humans/female/action/anger/anger-1.vsnd",
+			"sounds/humans/female/action/anger/anger-10.vsnd",
+			"sounds/humans/female/action/anger/anger-11.vsnd",
+			"sounds/humans/female/action/anger/anger-12.vsnd",
+			"sounds/humans/female/action/anger/anger-13.vsnd",
+			"sounds/humans/female/action/anger/anger-14.vsnd",
+			"sounds/humans/female/action/anger/anger-15.vsnd",
+			"sounds/humans/female/action/anger/anger-16.vsnd",
+			"sounds/humans/female/action/anger/anger-17.vsnd",
+			"sounds/humans/female/action/anger/anger-18.vsnd",
+			"sounds/humans/female/action/anger/anger-19.vsnd",
+			"sounds/humans/female/action/anger/anger-2.vsnd",
+			"sounds/humans/female/action/anger/anger-20.vsnd",
+			"sounds/humans/female/action/anger/anger-21.vsnd",
+			"sounds/humans/female/action/anger/anger-22.vsnd",
+			"sounds/humans/female/action/anger/anger-3.vsnd",
+			"sounds/humans/female/action/anger/anger-4.vsnd",
+			"sounds/humans/female/action/anger/anger-5.vsnd",
+			"sounds/humans/female/action/anger/anger-6.vsnd",
+			"sounds/humans/female/action/anger/anger-7.vsnd",
+			"sounds/humans/female/action/anger/anger-8.vsnd",
+			"sounds/humans/female/action/anger/anger-9.vsnd",
+		]
+	}
+}

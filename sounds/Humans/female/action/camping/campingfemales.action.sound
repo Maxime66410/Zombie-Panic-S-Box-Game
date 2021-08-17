@@ -1,0 +1,33 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.0
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/humans/female/action/camping/camp-0.vsnd",
+			"sounds/humans/female/action/camping/camp-1.vsnd",
+			"sounds/humans/female/action/camping/camp-10.vsnd",
+			"sounds/humans/female/action/camping/camp-11.vsnd",
+			"sounds/humans/female/action/camping/camp-12.vsnd",
+			"sounds/humans/female/action/camping/camp-13.vsnd",
+			"sounds/humans/female/action/camping/camp-14.vsnd",
+			"sounds/humans/female/action/camping/camp-15.vsnd",
+			"sounds/humans/female/action/camping/camp-16.vsnd",
+			"sounds/humans/female/action/camping/camp-17.vsnd",
+			"sounds/humans/female/action/camping/camp-2.vsnd",
+			"sounds/humans/female/action/camping/camp-3.vsnd",
+			"sounds/humans/female/action/camping/camp-4.vsnd",
+			"sounds/humans/female/action/camping/camp-5.vsnd",
+			"sounds/humans/female/action/camping/camp-6.vsnd",
+			"sounds/humans/female/action/camping/camp-7.vsnd",
+			"sounds/humans/female/action/camping/camp-8.vsnd",
+			"sounds/humans/female/action/camping/camp-9.vsnd",
+		]
+	}
+}

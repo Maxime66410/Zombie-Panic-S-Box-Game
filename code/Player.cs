@@ -445,9 +445,13 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		while ( true )
 		{
 			await Task.DelaySeconds( 1 );
-			if ( ActionName != "none" )
+
+			if ( !IsZombie )
 			{
-				HumanAction(ActionName);
+				if ( ActionName != "none" )
+				{
+					HumanAction(ActionName);
+				}
 			}
 		}
 	}
@@ -458,15 +462,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( GenderType )
 		{
 			Client cl;
-			//PlaySound(nameOfAction + "males.action" );
-			Sound.FromEntity( nameOfAction + "males.action", this);
+			PlaySound(nameOfAction + "males.action" );
+			//Sound.FromEntity( nameOfAction + "males.action", this);
 			Log.Info(nameOfAction + "males.action");
 			ActionName = "none";
 		}
 		else
 		{
-			//PlaySound(nameOfAction + "females.action" );
-			Sound.FromEntity( nameOfAction + "females.action", this );
+			PlaySound(nameOfAction + "females.action" );
+			//Sound.FromEntity( nameOfAction + "females.action", this );
 			Log.Info(nameOfAction + "females.action");
 			ActionName = "none";
 		}
