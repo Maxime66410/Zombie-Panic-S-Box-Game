@@ -6,6 +6,7 @@ using System.Numerics;
 using System.Threading;
 using ZombiePanic;
 using ZombiePanic.ui;
+using System.Threading.Tasks;
 
 public partial class DeathmatchPlayer : Sandbox.Player
 {
@@ -17,13 +18,14 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	
 	[Net] public bool AlreadyGender { get; set; }
 	
-	[Net] public static bool GenderType { get; set; }
+	[Net] public bool GenderType { get; set; }
 
 	[Net] public static string ActionName { get; set; } = "none";
 
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
+		HumanWaitAction();
 	}
 
 	public override void Respawn()
@@ -229,11 +231,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				ActionMenuOpen.Checkclient(cl);
 			}
 			
-			if ( ActionName != "none" )
+			
+			/*if ( ActionName != "none" )
 			{
 				HumanAction(ActionName);
-				Log.Info(ActionName);
-			}
+			}*/
+		}
+		else
+		{
+			ActionMenuOpen.IsOpen = false;
 		}
 
 		SimulateActiveChild( cl, ActiveChild );
@@ -381,7 +387,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			TookDamage( To.Single( this ), info.Weapon.IsValid() ? info.Weapon.Position : info.Attacker.Position );
 		}
 	}
-
+	
 	[ClientRpc]
 	public void DidDamage( Vector3 pos, float amount, float healthinv )
 	{
@@ -434,17 +440,33 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		}
 	}
 
+	public async Task HumanWaitAction()
+	{
+		while ( true )
+		{
+			await Task.DelaySeconds( 1 );
+			if ( ActionName != "none" )
+			{
+				HumanAction(ActionName);
+			}
+		}
+	}
+	
+
 	public void HumanAction(string nameOfAction)
 	{
 		if ( GenderType )
 		{
-			PlaySound(nameOfAction + "males.action" );
+			Client cl;
+			//PlaySound(nameOfAction + "males.action" );
+			Sound.FromEntity( nameOfAction + "males.action", this);
 			Log.Info(nameOfAction + "males.action");
 			ActionName = "none";
 		}
 		else
 		{
-			PlaySound(nameOfAction + "females.action" );
+			//PlaySound(nameOfAction + "females.action" );
+			Sound.FromEntity( nameOfAction + "females.action", this );
 			Log.Info(nameOfAction + "females.action");
 			ActionName = "none";
 		}

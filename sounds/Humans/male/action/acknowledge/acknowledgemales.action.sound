@@ -6,7 +6,7 @@
 		Volume = 1.0
 		VolumeRandom = 0.0
 		Pitch = 1.0
-		PitchRandom = 0.2
+		PitchRandom = 0.0
 		DistanceMax = 350.0
 		Sounds = 
 		[
