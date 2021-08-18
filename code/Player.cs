@@ -461,7 +461,6 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	{
 		if ( GenderType )
 		{
-			Client cl;
 			PlaySound(nameOfAction + "males.action" );
 			//Sound.FromEntity( nameOfAction + "males.action", this);
 			Log.Info(nameOfAction + "males.action");
