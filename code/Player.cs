@@ -89,6 +89,27 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			SetMaterialGroup( 1 );
 			RenderColor = Color.White;
 			Inventory.DeleteContents();
+			
+			if ( !AlreadyGender )
+			{
+				Random rnd = new Random();
+
+				var RandomSound = rnd.Next( 0, 2 );
+
+				Log.Info(RandomSound);
+				
+				if ( RandomSound == 0 )
+				{
+					GenderType = true;
+					AlreadyGender = true;
+				}
+
+				if ( RandomSound == 1 )
+				{
+					GenderType = false;
+					AlreadyGender = true;
+				}
+			}
 		}
 
 

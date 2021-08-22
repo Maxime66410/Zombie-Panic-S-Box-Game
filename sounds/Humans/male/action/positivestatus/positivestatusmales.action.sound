@@ -1,0 +1,38 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.0
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/humans/male/action/positivestatus/postitivestatus-0.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-1.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-10.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-11.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-12.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-13.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-14.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-15.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-16.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-17.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-18.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-19.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-2.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-20.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-21.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-22.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-3.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-4.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-5.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-6.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-7.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-8.vsnd",
+			"sounds/humans/male/action/positivestatus/postitivestatus-9.vsnd",
+		]
+	}
+}

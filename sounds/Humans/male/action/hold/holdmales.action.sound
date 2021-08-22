@@ -1,0 +1,36 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	data = 
+	{
+		UI = false
+		Volume = 1.0
+		VolumeRandom = 0.0
+		Pitch = 1.0
+		PitchRandom = 0.0
+		DistanceMax = 350.0
+		Sounds = 
+		[
+			"sounds/humans/male/action/hold/hold-0.vsnd",
+			"sounds/humans/male/action/hold/hold-1.vsnd",
+			"sounds/humans/male/action/hold/hold-10.vsnd",
+			"sounds/humans/male/action/hold/hold-11.vsnd",
+			"sounds/humans/male/action/hold/hold-12.vsnd",
+			"sounds/humans/male/action/hold/hold-13.vsnd",
+			"sounds/humans/male/action/hold/hold-14.vsnd",
+			"sounds/humans/male/action/hold/hold-15.vsnd",
+			"sounds/humans/male/action/hold/hold-16.vsnd",
+			"sounds/humans/male/action/hold/hold-17.vsnd",
+			"sounds/humans/male/action/hold/hold-18.vsnd",
+			"sounds/humans/male/action/hold/hold-19.vsnd",
+			"sounds/humans/male/action/hold/hold-2.vsnd",
+			"sounds/humans/male/action/hold/hold-20.vsnd",
+			"sounds/humans/male/action/hold/hold-3.vsnd",
+			"sounds/humans/male/action/hold/hold-4.vsnd",
+			"sounds/humans/male/action/hold/hold-5.vsnd",
+			"sounds/humans/male/action/hold/hold-6.vsnd",
+			"sounds/humans/male/action/hold/hold-7.vsnd",
+			"sounds/humans/male/action/hold/hold-8.vsnd",
+			"sounds/humans/male/action/hold/hold-9.vsnd",
+		]
+	}
+}
