@@ -27,10 +27,16 @@ public class Vitals : Panel
 		if ( player.Tags.Has( "zombie" ) )
 		{
 			Team.Text = "Zombie";
+			Team.SetClass( "teamzombie", true );
 			return;
 		}
 
-		Team.Text = "Human";
+		if ( player.Tags.Has( "human" ) )
+		{
+			Team.SetClass( "teamzombie", false );
+			Team.SetClass( "team", true );
+			Team.Text = "Human";
+		}
 
 	}
 }

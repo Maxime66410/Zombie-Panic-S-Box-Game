@@ -23,7 +23,6 @@ public class WhoWinui : Panel
 		var timeofgame = DeathmatchGame.Instance;
 		if ( timeofgame == null ) return;
 
-
 		WhoIsWin.Text = timeofgame.WhoWin;
 	}
 }

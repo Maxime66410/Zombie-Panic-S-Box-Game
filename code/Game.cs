@@ -73,7 +73,7 @@ namespace ZombiePanic {
 		public void StartGame()
 		{
 			Instance.IsGameIsLaunch = true;
-			Instance.RoundDuration = 600;
+			Instance.RoundDuration = 30;
 			Instance.PreparingGame = false;
 			Log.Info( Instance.IsGameIsLaunch );
 			OnStartGame();

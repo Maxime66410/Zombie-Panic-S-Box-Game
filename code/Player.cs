@@ -23,6 +23,8 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	//[Net] public int ColorBody { get; set; } No need this for the moment
 	[Net] public static string ActionName { get; set; } = "none";
 
+	private SpotLightEntity SpotLightZombie;
+
 	public DeathmatchPlayer()
 	{
 		Inventory = new DmInventory( this );
@@ -73,6 +75,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 			if ( !IsZombie )
 			{
+				this.Tags.Add( "human" );
 				HumanSpawnSound();
 			}
 
@@ -80,6 +83,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			{
 				ZombieSpawnSound();
 				this.Tags.Add( "zombie" );
+				this.Tags.Remove( "human" );
 			}
 
 		}
@@ -88,6 +92,9 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			AlreadyGender = false;
 			IsZombie = false;
 			Inventory.DeleteContents();
+			
+			this.Tags.Add( "human" );
+			this.Tags.Remove( "zombie" );
 			
 			if ( !AlreadyGender )
 			{
@@ -146,14 +153,15 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( !IsZombie )
 		{
 			Inventory.Add( new Pistol(), true );
-			Inventory.Add( new Shotgun() );
-			Inventory.Add( new SMG() );
-			Inventory.Add( new Crossbow() );
+			//Inventory.Add( new Shotgun() );
+			//Inventory.Add( new SMG() );
+			//Inventory.Add( new Crossbow() );
 			Inventory.Add( new Knife() );
+			Inventory.Add( new Flashlight() );
 			
 			GiveAmmo( AmmoType.Pistol, 100 );
-			GiveAmmo( AmmoType.Buckshot, 8 );
-			GiveAmmo( AmmoType.Crossbow, 4 );
+			//GiveAmmo( AmmoType.Buckshot, 8 );
+			// GiveAmmo( AmmoType.Crossbow, 4 );
 		}
 
 		if ( IsZombie )
@@ -168,8 +176,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		IsDead = false;
 		
+		
 		base.Respawn();
 	}
+
 	public override void OnKilled()
 	{
 		base.OnKilled();
@@ -208,8 +218,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		IsDead = true;
 	}
-
-
+	
 	public override void Simulate( Client cl )
 	{
 		//if ( cl.NetworkIdent == 1 )
@@ -266,8 +275,8 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			{
 				ActionMenuOpen.Checkclient(cl);
 			}
-			
-			
+
+
 			/*if ( ActionName != "none" )
 			{
 				HumanAction(ActionName);
@@ -276,6 +285,12 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		else
 		{
 			ActionMenuOpen.IsOpen = false;
+			
+			
+			if ( Input.Pressed( InputButton.Flashlight ) )
+			{
+				
+			}
 		}
 
 		SimulateActiveChild( cl, ActiveChild );
