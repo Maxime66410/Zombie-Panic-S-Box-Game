@@ -88,7 +88,7 @@ namespace ZombiePanic {
 			{
 				WhoWin = "";
 				Instance.PreparingGame = true;
-				Instance.RoundDuration = 30;
+				Instance.RoundDuration = 600;
 			}
 		}
 
