@@ -104,10 +104,10 @@ namespace ZombiePanic.ui
 			if ( player == null ) return;
 		}
 
-		protected override void OnClick( MousePanelEvent e )
+		protected override void OnClick( MousePanelEvent e)
 		{
 			base.OnClick( e );
-
+			
 			DeathmatchPlayer.ActionName = ChooseAction;
 			Log.Info(DeathmatchPlayer.ActionName);
 		}

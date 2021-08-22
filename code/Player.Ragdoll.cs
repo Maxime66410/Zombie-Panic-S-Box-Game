@@ -27,6 +27,16 @@ partial class DeathmatchPlayer
 		ent.TakeDecalsFrom( this );
 		ent.SetRagdollVelocityFrom( this );
 		ent.DeleteAsync( 20.0f );
+		
+		if ( IsZombie )
+		{
+			ent.SetMaterialGroup( 1 );
+			ent.RenderColor = Color.Green;
+		}
+		else
+		{
+			// No need Config for the moment
+		}
 
 		// Copy the clothes over
 		foreach ( var child in Children )
@@ -57,7 +67,6 @@ partial class DeathmatchPlayer
 				ent.PhysicsGroup.AddVelocity( force );
 			}
 		}
-
 
 		Corpse = ent;
 

@@ -19,7 +19,8 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	[Net] public bool AlreadyGender { get; set; }
 	
 	[Net] public bool GenderType { get; set; }
-
+	
+	//[Net] public int ColorBody { get; set; } No need this for the moment
 	[Net] public static string ActionName { get; set; } = "none";
 
 	public DeathmatchPlayer()
@@ -86,29 +87,43 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		{
 			AlreadyGender = false;
 			IsZombie = false;
-			SetMaterialGroup( 1 );
-			RenderColor = Color.White;
 			Inventory.DeleteContents();
 			
 			if ( !AlreadyGender )
 			{
 				Random rnd = new Random();
 
-				var RandomSound = rnd.Next( 0, 2 );
+				var RandomGender = rnd.Next( 0, 2 );
 
-				Log.Info(RandomSound);
+				Log.Info(RandomGender);
 				
-				if ( RandomSound == 0 )
+				if ( RandomGender == 0 )
 				{
 					GenderType = true;
 					AlreadyGender = true;
 				}
 
-				if ( RandomSound == 1 )
+				if ( RandomGender == 1 )
 				{
 					GenderType = false;
 					AlreadyGender = true;
 				}
+			}
+
+			if ( !IsZombie )
+			{
+			/*	SetMaterialGroup( 0 );
+				
+				Random rnds = new Random();
+
+				var RandomColor = rnds.Next( 0, 2 );
+
+				if ( RandomColor == 0 )
+				{
+					
+				}*/
+				SetMaterialGroup( 1 );
+				RenderColor = Color.White;
 			}
 		}
 
@@ -477,20 +492,20 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		}
 	}
 	
-
+	[ServerCmd]
 	public void HumanAction(string nameOfAction)
 	{
 		if ( GenderType )
 		{
-			PlaySound(nameOfAction + "males.action" );
-			//Sound.FromEntity( nameOfAction + "males.action", this);
+			//PlaySound(nameOfAction + "males.action" );
+			Sound.FromEntity( nameOfAction + "males.action", this);
 			Log.Info(nameOfAction + "males.action");
 			ActionName = "none";
 		}
 		else
 		{
-			PlaySound(nameOfAction + "females.action" );
-			//Sound.FromEntity( nameOfAction + "females.action", this );
+			//PlaySound(nameOfAction + "females.action" );
+			Sound.FromEntity( nameOfAction + "females.action", this );
 			Log.Info(nameOfAction + "females.action");
 			ActionName = "none";
 		}
