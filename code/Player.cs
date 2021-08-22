@@ -42,6 +42,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				IsZombie = true;
 				SetMaterialGroup( 1 );
 				RenderColor = Color.Green;
+				this.Tags.Remove( "human" );
 			}
 
 			if ( this.Tags.Has( "zombie" ) )
