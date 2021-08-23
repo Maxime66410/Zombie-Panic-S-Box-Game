@@ -36,7 +36,6 @@ namespace ZombiePanic {
 			if ( IsServer )
 			{
 				new DeathmatchHud();
-
 			}
 		}
 

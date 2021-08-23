@@ -160,9 +160,9 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			Inventory.Add( new Knife() );
 			Inventory.Add( new Flashlight() );
 			
-			GiveAmmo( AmmoType.Pistol, 100 );
+			GiveAmmo( AmmoType.Pistol, 120 );
 			//GiveAmmo( AmmoType.Buckshot, 8 );
-			// GiveAmmo( AmmoType.Crossbow, 4 );
+			//GiveAmmo( AmmoType.Crossbow, 4 );
 		}
 
 		if ( IsZombie )
