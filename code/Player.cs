@@ -158,7 +158,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			//Inventory.Add( new SMG() );
 			//Inventory.Add( new Crossbow() );
 			Inventory.Add( new Knife() );
-			Inventory.Add( new Flashlight() );
+			//Inventory.Add( new Flashlight() );
+			Inventory.Add( new GLOCK17() );
+			Inventory.Add( new USP() );
+			Inventory.Add( new GLOCK18() );
 			
 			GiveAmmo( AmmoType.Pistol, 120 );
 			//GiveAmmo( AmmoType.Buckshot, 8 );
