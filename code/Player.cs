@@ -153,17 +153,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		if ( !IsZombie )
 		{
-			Inventory.Add( new Pistol(), true );
-			//Inventory.Add( new Shotgun() );
-			//Inventory.Add( new SMG() );
-			//Inventory.Add( new Crossbow() );
-			Inventory.Add( new Knife() );
+			choosePistol();
+			
 			//Inventory.Add( new Flashlight() );
-			Inventory.Add( new GLOCK17() );
-			Inventory.Add( new USP() );
-			Inventory.Add( new GLOCK18() );
-			Inventory.Add( new PPK() );
-			Inventory.Add( new Revolver() );
+			Inventory.Add( new Knife(), true );
 			
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
@@ -530,6 +523,37 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			Sound.FromEntity( nameOfAction + "females.action", this );
 			Log.Info(nameOfAction + "females.action");
 			ActionName = "none";
+		}
+	}
+
+	public void choosePistol()
+	{
+		Random PistolRandom = new Random();
+		var PistolrandomNumber = PistolRandom.Next(0,5);
+
+		if ( PistolrandomNumber == 0 )
+		{
+			Inventory.Add( new GLOCK17() );
+		}
+			
+		if ( PistolrandomNumber == 1 )
+		{
+			Inventory.Add( new USP() );
+		}
+			
+		if ( PistolrandomNumber == 2 )
+		{
+			Inventory.Add( new GLOCK18() );
+		}
+			
+		if ( PistolrandomNumber == 3 )
+		{
+			Inventory.Add( new PPK() );
+		}
+			
+		if ( PistolrandomNumber == 4 )
+		{
+			Inventory.Add( new Revolver() );
 		}
 	}
 }

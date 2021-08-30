@@ -20,7 +20,7 @@
 		height: 6px;
 	}
 
-	&.dm_shotgun
+	&.dm_shotgun, &.zp_winchester, &.zp_supershorty, &.zp_remingston
 	{
 		opacity: 0.3;
 		transition: opacity 0.5s linear;

@@ -83,6 +83,18 @@
 ]
 
 // 
+// Remingston : BaseDmWeapon 
+// 
+@PointClass editormodel( "weapons/Shotsguns/remington/remington.vmdl" ) = zp_remingston : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+// 
 // Revolver : BaseDmWeapon 
 // 
 @PointClass editormodel( "weapons/Pistol/revolver/revolver.vmdl" ) = zp_revolver : ""
@@ -119,9 +131,33 @@
 ]
 
 // 
+// SuperShortyShotGun : BaseDmWeapon 
+// 
+@PointClass editormodel( "weapons/Shotsguns/supershorty/supershortyshotgun.vmdl" ) = zp_supershorty : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+// 
 // USP : BaseDmWeapon 
 // 
 @PointClass editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_usp : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+// 
+// Winchester : BaseDmWeapon 
+// 
+@PointClass editormodel( "weapons/Shotsguns/winchester/winchester.vmdl" ) = zp_winchester : ""
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
