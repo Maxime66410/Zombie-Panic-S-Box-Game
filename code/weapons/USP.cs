@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "weapons/Pistol/usp/usp.vmdl" )]
 partial class USP : BaseDmWeapon
 { 
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override string ViewModelPath => "weapons/Pistol/usp/v_usp.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;

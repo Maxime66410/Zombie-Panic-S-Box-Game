@@ -25,7 +25,7 @@
 // 
 // GLOCK17 : BaseDmWeapon 
 // 
-@PointClass editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_glock17 : ""
+@PointClass editormodel( "weapons/Pistol/glock17/glock17.vmdl" ) = zp_glock17 : ""
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."

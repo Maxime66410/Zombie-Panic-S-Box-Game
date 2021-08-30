@@ -2,10 +2,10 @@
 
 
 [Library( "zp_glock17", Title = "Glock 17" )]
-[Hammer.EditorModel( "weapons/Pistol/usp/usp.vmdl" )]
+[Hammer.EditorModel( "weapons/Pistol/glock17/glock17.vmdl" )]
 partial class GLOCK17 : BaseDmWeapon
 { 
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override string ViewModelPath => "weapons/Pistol/glock17/v_glock17.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;

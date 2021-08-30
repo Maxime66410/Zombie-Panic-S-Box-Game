@@ -5,7 +5,7 @@
 [Hammer.EditorModel( "weapons/Pistol/glock18c/glock18.vmdl" )]
 partial class GLOCK18 : BaseDmWeapon
 { 
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override string ViewModelPath => "weapons/Pistol/glock18c/v_glock18.vmdl";
 
 	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
