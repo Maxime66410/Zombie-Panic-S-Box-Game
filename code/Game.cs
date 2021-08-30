@@ -185,6 +185,7 @@ namespace ZombiePanic {
 					{
 						Instance.IsGameIsLaunch = false;
 						OnFinishGame();
+						Instance.WhoWin = "";
 					}
 
 					break;

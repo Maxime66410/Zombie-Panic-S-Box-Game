@@ -8,7 +8,7 @@ partial class Shotgun : BaseDmWeapon
 	public override string ViewModelPath => "weapons/rust_pumpshotgun/v_rust_pumpshotgun.vmdl";
 	public override float PrimaryRate => 1;
 	public override float SecondaryRate => 1;
-	public override AmmoType AmmoType => AmmoType.Buckshot;
+	public override AmmoType AmmoType => AmmoType.ShotgunShells;
 	public override int ClipSize => 8;
 	public override float ReloadTime => 0.5f;
 	public override int Bucket => 2;

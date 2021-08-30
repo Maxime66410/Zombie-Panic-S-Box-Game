@@ -162,10 +162,13 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			Inventory.Add( new GLOCK17() );
 			Inventory.Add( new USP() );
 			Inventory.Add( new GLOCK18() );
+			Inventory.Add( new PPK() );
+			Inventory.Add( new Revolver() );
 			
 			GiveAmmo( AmmoType.Pistol, 120 );
-			//GiveAmmo( AmmoType.Buckshot, 8 );
-			//GiveAmmo( AmmoType.Crossbow, 4 );
+			GiveAmmo( AmmoType.Magnum, 64 );
+			GiveAmmo( AmmoType.Rifle, 340 );
+			GiveAmmo( AmmoType.ShotgunShells, 32 );
 		}
 
 		if ( IsZombie )

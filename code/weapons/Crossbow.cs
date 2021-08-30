@@ -8,7 +8,7 @@ partial class Crossbow : BaseDmWeapon
 
 	public override float PrimaryRate => 1;
 	public override int Bucket => 3;
-	public override AmmoType AmmoType => AmmoType.Crossbow;
+	public override AmmoType AmmoType => AmmoType.Rifle;
 
 	[Net]
 	public bool Zoomed { get; set; }
