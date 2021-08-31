@@ -157,7 +157,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			
 			//Inventory.Add( new Flashlight() );
 			Inventory.Add( new Knife(), true );
-			
+
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
 			GiveAmmo( AmmoType.Rifle, 340 );

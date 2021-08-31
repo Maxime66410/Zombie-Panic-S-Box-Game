@@ -78,6 +78,15 @@
 						point0 = [ -31.215136, 0.0, -1.088343 ]
 						point1 = [ 2.0, 0.0, 6.594399 ]
 					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "hold_R"
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 13.161938, 0.055942, 2.857088 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 41.459087, 2.566429, 16.090826 ]
+					},
 				]
 			},
 			{

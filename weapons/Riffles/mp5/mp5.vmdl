@@ -1,0 +1,141 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "root"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "hold_R"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "Fire"
+										origin = [ 20.488459, 0.0, 6.01551 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ 5.54146, 0.0, 7.107305 ]
+								angles = [ 0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ -6.017421, 0.0, -6.919207 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						do_not_discard = true
+					},
+					{
+						_class = "Bone"
+						name = "muzzle"
+						origin = [ 17.536434, 0.0, 4.903014 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "mp5.vmat"
+								to = "weapons/riffles/mp5/material/mp5body.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "hold_R"
+						surface_prop = "metal"
+						collision_prop = "default"
+						radius = 2.0
+						point0 = [ 9.34606, 0.0, 4.066261 ]
+						point1 = [ -5.860687, 0.0, -4.571734 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "root"
+						surface_prop = "metal"
+						collision_prop = "default"
+						radius = 2.0
+						point0 = [ -12.936075, 0.0, 12.058887 ]
+						point1 = [ 23.255989, 0.0, 12.058887 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "hold_R"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ 0.0, 0.0, 0.0 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 35.0, 2.0, 18.0 ]
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "muzzle"
+						parent_bone = "muzzle"
+						relative_origin = [ 0.0, 0.0, -0.269824 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "weapons/Riffles/mp5/model/mp5.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 0.0028
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = "hold_R"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

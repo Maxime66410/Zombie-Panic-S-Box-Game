@@ -1,0 +1,141 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "root"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "hold_R"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "Fire"
+										origin = [ 26.51803, 0.0, 2.930735 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ 2.880543, 0.0, 4.714573 ]
+								angles = [ 0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ -11.273248, 0.0, -4.701904 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "front1_lambert26sg.vmat"
+								to = "weapons/riffles/m4/material/front1_lambert.vmat"
+							},
+							{
+								from = "lambert27sg.vmat"
+								to = "weapons/riffles/m4/material/lambert27sg.vmat"
+							},
+							{
+								from = "lambert28sg.vmat"
+								to = "weapons/riffles/m4/material/lambert28sg.vmat"
+							},
+							{
+								from = "lambert29sg.vmat"
+								to = "weapons/riffles/m4/material/lambert29sg.vmat"
+							},
+							{
+								from = "lambert30sg.vmat"
+								to = "weapons/riffles/m4/material/lambert30sg.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "muzzle"
+						parent_bone = "Fire"
+						relative_origin = [ 1.930038, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "weapons/Riffles/m4/model/M4Model.fbx"
+						import_translation = [ 53.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, -90.0, 0.0 ]
+						import_scale = 0.2
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = "hold_R"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "hold_R"
+						surface_prop = "metal"
+						collision_prop = "default"
+						radius = 2.0
+						point0 = [ -0.218482, 0.0, -3.773974 ]
+						point1 = [ 1.397604, 0.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "hold_R"
+						surface_prop = "metal"
+						collision_prop = "default"
+						origin = [ 10.45861, 0.37842, -0.042615 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 40.46265, 3.496399, 12.993494 ]
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}
