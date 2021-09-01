@@ -154,11 +154,10 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		if ( !IsZombie )
 		{
+			chooseMelee();
+			
 			choosePistol();
-
-			Inventory.Add( new Axe(), true );
-			Inventory.Add( new baseballbatwood() );
-
+			
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
 			GiveAmmo( AmmoType.Rifle, 340 );
@@ -556,6 +555,47 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( PistolrandomNumber == 4 )
 		{
 			Inventory.Add( new Revolver() );
+		}
+	}
+
+	public void chooseMelee()
+	{
+		Random MeleeRandom = new Random();
+		var MeleeRandomNumber = MeleeRandom.Next( 0, 6 );
+
+		if ( MeleeRandomNumber == 0 )
+		{
+			Inventory.Add( new Axe() );
+		}
+		
+		if ( MeleeRandomNumber == 1 )
+		{
+			Inventory.Add( new baseballbatmetal() );
+		}
+		
+		if ( MeleeRandomNumber == 2 )
+		{
+			Inventory.Add( new baseballbatwood() );
+		}
+		
+		if ( MeleeRandomNumber == 3 )
+		{
+			Inventory.Add( new CookingPot() );
+		}
+		
+		if ( MeleeRandomNumber == 4 )
+		{
+			Inventory.Add( new Crowbar() );
+		}
+		
+		if ( MeleeRandomNumber == 5 )
+		{
+			Inventory.Add( new FryingPan() );
+		}
+		
+		if ( MeleeRandomNumber == 6 )
+		{
+			Inventory.Add( new metalchair() );
 		}
 	}
 }
