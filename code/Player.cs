@@ -51,6 +51,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 				SetMaterialGroup( 1 );
 				RenderColor = Color.Green;
 				Inventory.DeleteContents();
+				this.Tags.Remove( "human" );
 			}
 
 			if ( !AlreadyGender )
@@ -154,14 +155,14 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( !IsZombie )
 		{
 			choosePistol();
-			
-			//Inventory.Add( new Flashlight() );
-			Inventory.Add( new Knife(), true );
+
+			Inventory.Add( new Axe(), true );
 
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
 			GiveAmmo( AmmoType.Rifle, 340 );
 			GiveAmmo( AmmoType.ShotgunShells, 32 );
+			GiveAmmo( AmmoType.Melee, 999 );
 		}
 
 		if ( IsZombie )
@@ -403,6 +404,14 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public override void TakeDamage( DamageInfo info )
 	{
+		var lastattacker = info.Attacker as DeathmatchPlayer;
+		
+		if ( LastAttacker.IsValid() && LastAttacker.Tags.Has( "zombie" ) == this.Tags.Has( "zombie" ) )
+			return;
+
+		if ( LastAttacker.IsValid() && LastAttacker.Tags.Has( "human" ) == this.Tags.Has( "human" ) )
+			return;
+		 
 		LastDamage = info;
 
 		// hack - hitbox 0 is head

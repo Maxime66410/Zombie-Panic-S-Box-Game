@@ -63,5 +63,6 @@ public enum AmmoType
 	Pistol,
 	Magnum,
 	ShotgunShells,
-	Rifle
+	Rifle,
+	Melee
 }
