@@ -157,6 +157,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			choosePistol();
 
 			Inventory.Add( new Axe(), true );
+			Inventory.Add( new baseballbatwood() );
 
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
@@ -404,14 +405,6 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 	public override void TakeDamage( DamageInfo info )
 	{
-		var lastattacker = info.Attacker as DeathmatchPlayer;
-		
-		if ( LastAttacker.IsValid() && LastAttacker.Tags.Has( "zombie" ) == this.Tags.Has( "zombie" ) )
-			return;
-
-		if ( LastAttacker.IsValid() && LastAttacker.Tags.Has( "human" ) == this.Tags.Has( "human" ) )
-			return;
-		 
 		LastDamage = info;
 
 		// hack - hitbox 0 is head
