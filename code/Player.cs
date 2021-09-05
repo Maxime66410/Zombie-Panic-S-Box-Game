@@ -155,7 +155,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( !IsZombie )
 		{
 			Inventory.DeleteContents();
-			
+
 			chooseMelee();
 			
 			choosePistol();
@@ -536,34 +536,34 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		if ( PistolrandomNumber == 0 )
 		{
-			Inventory.Add( new GLOCK17() );
+			Inventory.Add( new GLOCK17(), true );
 		}
 			
 		if ( PistolrandomNumber == 1 )
 		{
-			Inventory.Add( new USP() );
+			Inventory.Add( new USP(), true );
 		}
 			
 		if ( PistolrandomNumber == 2 )
 		{
-			Inventory.Add( new GLOCK18() );
+			Inventory.Add( new GLOCK18(), true );
 		}
 			
 		if ( PistolrandomNumber == 3 )
 		{
-			Inventory.Add( new PPK() );
+			Inventory.Add( new PPK(), true );
 		}
 			
 		if ( PistolrandomNumber == 4 )
 		{
-			Inventory.Add( new Revolver() );
+			Inventory.Add( new Revolver(), true );
 		}
 	}
 
 	public void chooseMelee()
 	{
 		Random MeleeRandom = new Random();
-		var MeleeRandomNumber = MeleeRandom.Next( 0, 6 );
+		var MeleeRandomNumber = MeleeRandom.Next( 0, 11 );
 
 		if ( MeleeRandomNumber == 0 )
 		{
@@ -598,6 +598,26 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( MeleeRandomNumber == 6 )
 		{
 			Inventory.Add( new metalchair() );
+		}
+		
+		if ( MeleeRandomNumber == 7 )
+		{
+			Inventory.Add( new GolfClub() );
+		}
+		
+		if ( MeleeRandomNumber == 8 )
+		{
+			Inventory.Add( new KeyBoard() );
+		}
+		
+		if ( MeleeRandomNumber == 9 )
+		{
+			Inventory.Add( new leadpipe() );
+		}
+		
+		if ( MeleeRandomNumber == 10 )
+		{
+			Inventory.Add( new PipeWrench() );
 		}
 	}
 }
