@@ -154,6 +154,8 @@ public partial class DeathmatchPlayer : Sandbox.Player
 
 		if ( !IsZombie )
 		{
+			Inventory.DeleteContents();
+			
 			chooseMelee();
 			
 			choosePistol();

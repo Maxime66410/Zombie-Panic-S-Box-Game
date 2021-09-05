@@ -24,7 +24,7 @@ namespace ZombiePanic {
 		[Net] public int RoundDuration { get; set; }
 
 		[Net] public string WhoWin { get; set; }
-
+		
 		public static DeathmatchGame Instance
 		{
 			get => Current as DeathmatchGame;
@@ -77,7 +77,7 @@ namespace ZombiePanic {
 			Log.Info( Instance.IsGameIsLaunch );
 			OnStartGame();
 			Sound.FromScreen( "roundready.round" );
-
+			Sound.FromScreen( "ambiantmusic.ambiant" );
 		}
 
 
@@ -272,6 +272,7 @@ namespace ZombiePanic {
 		{
 			Instance.RoundDuration = 10;
 			Instance.InialiseGameEnd = true;
+			StopAmbiant();
 		}
 
 		public async Task OnFinishedGamePreparing()
@@ -305,6 +306,33 @@ namespace ZombiePanic {
 		public void SoundZombieWin()
 		{
 			Sound.FromScreen( "zombieend.round" );
+		}
+
+		public void StopAmbiant()
+		{
+			Sound.FromScreen( "sounds/atmosphere/km_abandonedmine.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_chapelofunrest.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_cityofsouls.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_cloudofsorrow.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_deepcaverns.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_descent.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_desertofdarkness.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_foggymeadow.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_forgottenkingdom.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_frozenwasteland.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_halls.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_hell.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_hollow.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_horde.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_houseofwhispers.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_nightmare.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_orphanage.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_pitchblack.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_plague.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_rebirth.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_sewers.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_subway.vsnd" ).Stop();
+			Sound.FromScreen( "sounds/atmosphere/km_torturechamber.vsnd" ).Stop();
 		}
 
 	}
