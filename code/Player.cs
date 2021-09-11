@@ -155,7 +155,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( !IsZombie )
 		{
 			Inventory.DeleteContents();
-
+			
 			chooseMelee();
 			
 			choosePistol();
@@ -620,4 +620,31 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			Inventory.Add( new PipeWrench() );
 		}
 	}
+	
+	public void giveAllWeapons()
+	{
+		Inventory.Add( new Axe() );
+		Inventory.Add( new baseballbatmetal() );
+		Inventory.Add( new baseballbatwood() );
+		Inventory.Add( new CookingPot() );
+		Inventory.Add( new Crowbar() );
+		Inventory.Add( new FryingPan() );
+		Inventory.Add( new metalchair() );
+		Inventory.Add( new GolfClub() );
+		Inventory.Add( new KeyBoard() );
+		Inventory.Add( new leadpipe() );
+		Inventory.Add( new PipeWrench() );
+		Inventory.Add( new GLOCK17() );
+		Inventory.Add( new USP() );
+		Inventory.Add( new GLOCK18() );
+		Inventory.Add( new PPK() );
+		Inventory.Add( new Revolver() );
+		Inventory.Add( new M4() );
+		Inventory.Add(new MP5());
+		Inventory.Add( new AK47() );
+		Inventory.Add( new Winchester() );
+		Inventory.Add( new SuperShortyShotGun() );
+		Inventory.Add( new Remingston() );
+	}
+	
 }

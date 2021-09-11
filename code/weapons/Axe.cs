@@ -91,6 +91,7 @@ partial class Axe : BaseDmWeapon
 	public override void SimulateAnimator(PawnAnimator anim)
 	{
 		anim.SetParam("holdtype", 4); // TODO this is shit
+		anim.SetParam("holdtype_handedness", 1);
 		anim.SetParam("aimat_weight", 1.0f);
 	}
 	

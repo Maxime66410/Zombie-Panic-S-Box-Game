@@ -334,7 +334,6 @@ namespace ZombiePanic {
 			Sound.FromScreen( "sounds/atmosphere/km_subway.vsnd" ).Stop();
 			Sound.FromScreen( "sounds/atmosphere/km_torturechamber.vsnd" ).Stop();
 		}
-
 	}
 
 }

@@ -14,6 +14,8 @@ partial class ZombieHand : BaseDmWeapon
 	public virtual int BaseDamage => 35;
 	public virtual int MeleeDistance => 80;
 
+	private int TypeAnimWorld = 0;
+	
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -56,6 +58,9 @@ partial class ZombieHand : BaseDmWeapon
 		
 		(Owner as AnimEntity).SetAnimBool("b_attack", true);
 		ShootEffects();
+
+		var Random = new Random();
+		TypeAnimWorld = Random.Next( 0, 3 );
 	}
 
 	public override void AttackSecondary()
@@ -82,6 +87,7 @@ partial class ZombieHand : BaseDmWeapon
 	public override void SimulateAnimator(PawnAnimator anim)
 	{
 		anim.SetParam("holdtype", 4); // TODO this is shit
+		anim.SetParam("holdtype_handedness", TypeAnimWorld);
 		anim.SetParam("aimat_weight", 1.0f);
 	}
 
