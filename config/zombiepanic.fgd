@@ -1,5 +1,5 @@
 // 
-// AK47 : BaseDmWeapon 
+// AK47
 // 
 @PointClass editormodel( "weapons/Riffles/ak47/ak47.vmdl" ) = zp_ak47 : ""
 [
@@ -11,7 +11,7 @@
 ]
 
 // 
-// Axe : BaseDmWeapon 
+// Axe
 // 
 @PointClass editormodel( "weapons/Melee/axe/axe.vmdl" ) = zp_axe : ""
 [
@@ -23,7 +23,7 @@
 ]
 
 // 
-// baseballbatmetal : BaseDmWeapon 
+// baseballbatmetal
 // 
 @PointClass editormodel( "weapons/Melee/baseballbat/baseballbatmetal.vmdl" ) = zp_baseballbatmetal : ""
 [
@@ -35,7 +35,7 @@
 ]
 
 // 
-// baseballbatwood : BaseDmWeapon 
+// baseballbatwood
 // 
 @PointClass editormodel( "weapons/Melee/baseballbat/baseballbatwood.vmdl" ) = zp_baseballbatwood : ""
 [
@@ -47,7 +47,7 @@
 ]
 
 // 
-// CookingPot : BaseDmWeapon 
+// CookingPot
 // 
 @PointClass editormodel( "weapons/Melee/cookingpot/cookingpot.vmdl" ) = zp_cookingpot : ""
 [
@@ -59,7 +59,7 @@
 ]
 
 // 
-// Crossbow : BaseDmWeapon 
+// Crossbow
 // 
 @PointClass editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
 [
@@ -71,7 +71,7 @@
 ]
 
 // 
-// Crowbar : BaseDmWeapon 
+// Crowbar
 // 
 @PointClass editormodel( "weapons/Melee/crowbar/crowbar.vmdl" ) = zp_crowbar : ""
 [
@@ -83,7 +83,7 @@
 ]
 
 // 
-// Flashlight : BaseDmWeapon 
+// Flashlight
 // 
 @PointClass = weapon_flashlight : ""
 [
@@ -95,7 +95,7 @@
 ]
 
 // 
-// FryingPan : BaseDmWeapon 
+// FryingPan
 // 
 @PointClass editormodel( "weapons/Melee/fryingpan/fryingpan.vmdl" ) = zp_fryingpan : ""
 [
@@ -107,7 +107,7 @@
 ]
 
 // 
-// GLOCK17 : BaseDmWeapon 
+// GLOCK17
 // 
 @PointClass editormodel( "weapons/Pistol/glock17/glock17.vmdl" ) = zp_glock17 : ""
 [
@@ -119,7 +119,7 @@
 ]
 
 // 
-// GLOCK18 : BaseDmWeapon 
+// GLOCK18
 // 
 @PointClass editormodel( "weapons/Pistol/glock18c/glock18.vmdl" ) = zp_glock18 : ""
 [
@@ -131,7 +131,7 @@
 ]
 
 // 
-// GolfClub : BaseDmWeapon 
+// GolfClub
 // 
 @PointClass editormodel( "weapons/Melee/golfclub/golfclub.vmdl" ) = zp_golfclub : ""
 [
@@ -143,7 +143,7 @@
 ]
 
 // 
-// KeyBoard : BaseDmWeapon 
+// KeyBoard
 // 
 @PointClass editormodel( "weapons/Melee/keyboard/keyboard.vmdl" ) = zp_keyboard : ""
 [
@@ -155,7 +155,7 @@
 ]
 
 // 
-// Knife : BaseDmWeapon 
+// Knife
 // 
 @PointClass editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_knife : ""
 [
@@ -167,7 +167,7 @@
 ]
 
 // 
-// leadpipe : BaseDmWeapon 
+// leadpipe
 // 
 @PointClass editormodel( "weapons/Melee/leadpipe/leadpipe.vmdl" ) = zp_pipe : ""
 [
@@ -179,7 +179,7 @@
 ]
 
 // 
-// M4 : BaseDmWeapon 
+// M4
 // 
 @PointClass editormodel( "weapons/Riffles/m4/m4.vmdl" ) = zp_m4 : ""
 [
@@ -191,7 +191,7 @@
 ]
 
 // 
-// metalchair : BaseDmWeapon 
+// metalchair
 // 
 @PointClass editormodel( "weapons/Melee/chair/chair.vmdl" ) = zp_metalchair : ""
 [
@@ -203,7 +203,7 @@
 ]
 
 // 
-// MP5 : BaseDmWeapon 
+// MP5
 // 
 @PointClass editormodel( "weapons/Riffles/mp5/mp5.vmdl" ) = zp_mp5 : ""
 [
@@ -215,7 +215,7 @@
 ]
 
 // 
-// PipeWrench : BaseDmWeapon 
+// PipeWrench
 // 
 @PointClass editormodel( "weapons/Melee/leadpipe/pipewrench.vmdl" ) = zp_pipewrench : ""
 [
@@ -227,7 +227,7 @@
 ]
 
 // 
-// Pistol : BaseDmWeapon 
+// Pistol
 // 
 @PointClass editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
 [
@@ -239,7 +239,7 @@
 ]
 
 // 
-// PPK : BaseDmWeapon 
+// PPK
 // 
 @PointClass editormodel( "weapons/Pistol/ppk/ppk.vmdl" ) = zp_ppk : ""
 [
@@ -251,7 +251,7 @@
 ]
 
 // 
-// Remingston : BaseDmWeapon 
+// Remingston
 // 
 @PointClass editormodel( "weapons/Shotsguns/remington/remington.vmdl" ) = zp_remingston : ""
 [
@@ -263,7 +263,7 @@
 ]
 
 // 
-// Revolver : BaseDmWeapon 
+// Revolver
 // 
 @PointClass editormodel( "weapons/Pistol/revolver/revolver.vmdl" ) = zp_revolver : ""
 [
@@ -275,7 +275,7 @@
 ]
 
 // 
-// Shotgun : BaseDmWeapon 
+// Shotgun
 // 
 @PointClass editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
 [
@@ -287,7 +287,7 @@
 ]
 
 // 
-// SMG : BaseDmWeapon 
+// SMG
 // 
 @PointClass editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
 [
@@ -299,7 +299,7 @@
 ]
 
 // 
-// SuperShortyShotGun : BaseDmWeapon 
+// SuperShortyShotGun
 // 
 @PointClass editormodel( "weapons/Shotsguns/supershorty/supershortyshotgun.vmdl" ) = zp_supershorty : ""
 [
@@ -311,7 +311,7 @@
 ]
 
 // 
-// USP : BaseDmWeapon 
+// USP
 // 
 @PointClass editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_usp : ""
 [
@@ -323,7 +323,7 @@
 ]
 
 // 
-// Winchester : BaseDmWeapon 
+// Winchester
 // 
 @PointClass editormodel( "weapons/Shotsguns/winchester/winchester.vmdl" ) = zp_winchester : ""
 [
@@ -335,7 +335,7 @@
 ]
 
 // 
-// ZombieHand : BaseDmWeapon 
+// ZombieHand
 // 
 @PointClass editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_zombiehand : ""
 [
@@ -347,7 +347,7 @@
 ]
 
 // 
-// ZombiePanic.DeathmatchGame : Sandbox.Game 
+// ZombiePanic.DeathmatchGame
 // 
 @PointClass = zombiepanic : ""
 [
