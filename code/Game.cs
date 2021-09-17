@@ -308,7 +308,7 @@ namespace ZombiePanic {
 			Sound.FromScreen( "zombieend.round" );
 		}
 
-		public void StopAmbiant()
+		public static void StopAmbiant()
 		{
 			Sound.FromScreen( "sounds/atmosphere/km_abandonedmine.vsnd" ).Stop();
 			Sound.FromScreen( "sounds/atmosphere/km_chapelofunrest.vsnd" ).Stop();
@@ -334,6 +334,44 @@ namespace ZombiePanic {
 			Sound.FromScreen( "sounds/atmosphere/km_subway.vsnd" ).Stop();
 			Sound.FromScreen( "sounds/atmosphere/km_torturechamber.vsnd" ).Stop();
 		}
-	}
+		
+		[ServerCmd("force_start", Help = "To force start round")]
+		public static void force_start()
+		{
+			Instance.IsGameIsLaunch = true;
+			Instance.RoundDuration = 600;
+			Instance.PreparingGame = false;
+			
+			Random rand = new Random();
+			var target = Client.All[rand.Next( Client.All.Count )];
+			target.Pawn.Tags.Add( "zombie" );
 
+			foreach ( Client clients in Client.All )
+			{
+				if ( clients.Pawn is not DeathmatchPlayer player )
+				{
+					continue;
+				}
+
+				player.Respawn();
+			}
+			
+			StopAmbiant();
+			
+			Sound.FromScreen( "roundready.round" );
+			Sound.FromScreen( "ambiantmusic.ambiant" );
+		}
+
+		[ServerCmd( "force_stop", Help = "To force stop the round")]
+		public static void force_stop()
+		{
+			StopAmbiant();
+			Instance.PreparingGame = false;
+			Instance.IsGameIsLaunch = false;
+			Instance.RoundDuration = 10;
+			Instance.InialiseGameEnd = true;
+		}
+		
+		
+	}
 }
