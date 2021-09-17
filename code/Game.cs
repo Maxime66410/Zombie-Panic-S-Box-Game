@@ -371,7 +371,5 @@ namespace ZombiePanic {
 			Instance.RoundDuration = 10;
 			Instance.InialiseGameEnd = true;
 		}
-		
-		
 	}
 }
