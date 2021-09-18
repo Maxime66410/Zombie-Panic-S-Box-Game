@@ -126,6 +126,13 @@ ammo
 	color: #ff0;
 	mix-blend-mode: lighten;
 	font-family: Roboto;
+	
+	opacity: 1;
+
+	&.desactivateammo
+	{
+		opacity: 0;
+	}
 
 	label
 	{

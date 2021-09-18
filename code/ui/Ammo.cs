@@ -19,6 +19,16 @@ public class Ammo : Panel
 		var player = Local.Pawn;
 		if ( player == null ) return;
 
+		if ( player.Tags.Has( "zombie" ) )
+		{
+			SetClass("desactivateammo", true);
+		}
+
+		if ( player.Tags.Has( "human" ) )
+		{
+			SetClass("desactivateammo", false);
+		}
+
 		var weapon = player.ActiveChild as BaseDmWeapon;
 		SetClass( "active", weapon != null );
 
