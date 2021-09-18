@@ -174,6 +174,8 @@ namespace ZombiePanic {
 
 		public async Task LoopCheckPlayer()
 		{
+			var MusiqueToRestart = 0;
+			
 			while ( true )
 			{
 				await Task.DelaySeconds( 1 );
@@ -188,6 +190,20 @@ namespace ZombiePanic {
 						CheckStatsGame();
 					}
 
+					if ( MusiqueToRestart <= 317 )
+					{
+						MusiqueToRestart++;
+						Log.Info("Add Int MUsique " + MusiqueToRestart);
+					}
+
+					if ( MusiqueToRestart >= 318 )
+					{
+						StopAmbiant();
+						Sound.FromScreen( "ambiantmusic.ambiant" );
+						MusiqueToRestart = 0;
+						Log.Info("RESET Int MUsique " + MusiqueToRestart);
+					}
+
 					Log.Info( Instance.RoundDuration );
 
 					if ( Instance.RoundDuration <= 0 )
@@ -195,6 +211,10 @@ namespace ZombiePanic {
 						Instance.RoundDuration = 0;
 						CheckStatsGame();
 					}
+				}
+				else
+				{
+					MusiqueToRestart = 0;
 				}
 			}
 		}
