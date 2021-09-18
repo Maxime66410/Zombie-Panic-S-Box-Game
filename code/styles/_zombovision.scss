@@ -1,0 +1,14 @@
+﻿zombovision{
+
+  background-image: url("ui/zombovision2K.png");
+  background-size: cover;
+  width: 1920px;
+  height: 1080px;
+
+  opacity: 0;
+  
+  &.zomboactive{
+    opacity: 1;
+  }
+  
+}

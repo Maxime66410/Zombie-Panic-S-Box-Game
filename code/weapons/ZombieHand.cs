@@ -5,23 +5,43 @@ using System;
 [Hammer.EditorModel("weapons/rust_boneknife/rust_boneknife.vmdl")]
 partial class ZombieHand : BaseDmWeapon
 {
-	public override string ViewModelPath => "";
+	public override string ViewModelPath => "weapons/ZombieHand/v_zombiehand.vmdl";
 	public override int ClipSize => -1;
 	public override float PrimaryRate => 1.0f;
 	public override float SecondaryRate => 0.5f;
 	public override float ReloadTime => 4.0f;
-	public override int Bucket => 0;
+	public override int Bucket => 1;
 	public virtual int BaseDamage => 35;
 	public virtual int MeleeDistance => 80;
 
 	private int TypeAnimWorld = 0;
-	
+
+	protected virtual Vector3 ViewLightOffset => Vector3.Up;
+
+	private SpotLightEntity viewLight;
+
+	[Net, Local, Predicted]
+	private bool LightEnabled { get; set; } = true;
+
+	TimeSince timeSinceLightToggled;
+
 	public override void Spawn()
 	{
 		base.Spawn();
 		
 		SetModel("");
 	}
+	
+	public override void CreateViewModel()
+	{
+		base.CreateViewModel();
+
+		viewLight = CreateLight();
+		viewLight.SetParent( ViewModelEntity, "hold_R", new Transform( ViewLightOffset ) );
+		viewLight.EnableViewmodelRendering = true;
+		viewLight.Enabled = LightEnabled;
+	}
+	
 
 	public virtual void MeleeStrike(float damage, float force)
 	{
@@ -152,4 +172,35 @@ partial class ZombieHand : BaseDmWeapon
 			PlaySound("rust_boneknife_zombie_11.attack");
 		}
 	}
+	
+	private SpotLightEntity CreateLight()
+	{
+		var light = new SpotLightEntity
+		{
+			Enabled = true,
+			DynamicShadows = true,
+			Range = 2048,
+			Falloff = 1.0f,
+			LinearAttenuation = 0.0f,
+			QuadraticAttenuation = 1.0f,
+			Brightness = 2,
+			Color = Color.FromBytes(141, 135,59,255),
+			InnerConeAngle = 20,
+			OuterConeAngle = 80,
+			FogStength = 1.0f,
+			Owner = Owner,
+			LightCookie = Texture.Load( "materials/effects/lightcookie.vtex" )
+		};
+
+		return light;
+	}
+	
+	public override void Simulate( Client cl )
+	{
+		if ( cl == null )
+			return;
+
+		base.Simulate( cl );
+	}
+
 }
