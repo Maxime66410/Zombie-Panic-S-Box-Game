@@ -1,358 +1,313 @@
-// 
+
+@BaseClass = BaseProperties_zombiepanic
+[
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	parentAttachmentName(parentAttachment) [ group="Hierarchy" ] : "Parent Model Bone/Attachment Name" : : "The name of the bone or attachment to attach to on the entity's parent in the movement hierarchy. Use !bonemerge to use bone-merge style attachment."
+
+	useLocalOffset(boolean) [ group="Hierarchy" ] : "Use Model Attachment offsets" : 0 : "Whether to respect the specified local offset when doing the initial hierarchical attachment to its parent."
+	local.origin(vector) [ group="Hierarchy" ] : "Model Attachment position offset" : : "Offset in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
+	local.angles(angle) [ group="Hierarchy" ] : "Model Attachment angular offset" : : "Angular offset in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
+	local.scales(vector) [ group="Hierarchy" ] : "Model Attachment scale" : : "Scale in the local space of the parent model's attachment/bone to use in hierarchy. Not used if you are not using parent attachment."
+
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	tags(tags) : "Tags" : "" : "A list of general purpose tags for this entity, for interactions with other entities such as triggers."
+]
+
+//
 // AK47
-// 
-@PointClass editormodel( "weapons/Riffles/ak47/ak47.vmdl" ) = zp_ak47 : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/ak47/ak47.vmdl" ) = zp_ak47 : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Axe
-// 
-@PointClass editormodel( "weapons/Melee/axe/axe.vmdl" ) = zp_axe : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/axe/axe.vmdl" ) = zp_axe : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // baseballbatmetal
-// 
-@PointClass editormodel( "weapons/Melee/baseballbat/baseballbatmetal.vmdl" ) = zp_baseballbatmetal : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/baseballbat/baseballbatmetal.vmdl" ) = zp_baseballbatmetal : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // baseballbatwood
-// 
-@PointClass editormodel( "weapons/Melee/baseballbat/baseballbatwood.vmdl" ) = zp_baseballbatwood : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/baseballbat/baseballbatwood.vmdl" ) = zp_baseballbatwood : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // CookingPot
-// 
-@PointClass editormodel( "weapons/Melee/cookingpot/cookingpot.vmdl" ) = zp_cookingpot : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/cookingpot/cookingpot.vmdl" ) = zp_cookingpot : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Crossbow
-// 
-@PointClass editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Crowbar
-// 
-@PointClass editormodel( "weapons/Melee/crowbar/crowbar.vmdl" ) = zp_crowbar : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/crowbar/crowbar.vmdl" ) = zp_crowbar : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Flashlight
-// 
-@PointClass = weapon_flashlight : ""
+//
+@PointClass base(BaseProperties_zombiepanic) = weapon_flashlight : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // FryingPan
-// 
-@PointClass editormodel( "weapons/Melee/fryingpan/fryingpan.vmdl" ) = zp_fryingpan : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/fryingpan/fryingpan.vmdl" ) = zp_fryingpan : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // GLOCK17
-// 
-@PointClass editormodel( "weapons/Pistol/glock17/glock17.vmdl" ) = zp_glock17 : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/glock17/glock17.vmdl" ) = zp_glock17 : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // GLOCK18
-// 
-@PointClass editormodel( "weapons/Pistol/glock18c/glock18.vmdl" ) = zp_glock18 : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/glock18c/glock18.vmdl" ) = zp_glock18 : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // GolfClub
-// 
-@PointClass editormodel( "weapons/Melee/golfclub/golfclub.vmdl" ) = zp_golfclub : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/golfclub/golfclub.vmdl" ) = zp_golfclub : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // KeyBoard
-// 
-@PointClass editormodel( "weapons/Melee/keyboard/keyboard.vmdl" ) = zp_keyboard : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/keyboard/keyboard.vmdl" ) = zp_keyboard : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Knife
-// 
-@PointClass editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_knife : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_knife : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // leadpipe
-// 
-@PointClass editormodel( "weapons/Melee/leadpipe/leadpipe.vmdl" ) = zp_pipe : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/leadpipe/leadpipe.vmdl" ) = zp_pipe : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // M4
-// 
-@PointClass editormodel( "weapons/Riffles/m4/m4.vmdl" ) = zp_m4 : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/m4/m4.vmdl" ) = zp_m4 : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // metalchair
-// 
-@PointClass editormodel( "weapons/Melee/chair/chair.vmdl" ) = zp_metalchair : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/chair/chair.vmdl" ) = zp_metalchair : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // MP5
-// 
-@PointClass editormodel( "weapons/Riffles/mp5/mp5.vmdl" ) = zp_mp5 : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/mp5/mp5.vmdl" ) = zp_mp5 : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // PipeWrench
-// 
-@PointClass editormodel( "weapons/Melee/leadpipe/pipewrench.vmdl" ) = zp_pipewrench : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/leadpipe/pipewrench.vmdl" ) = zp_pipewrench : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Pistol
-// 
-@PointClass editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // PPK
-// 
-@PointClass editormodel( "weapons/Pistol/ppk/ppk.vmdl" ) = zp_ppk : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/ppk/ppk.vmdl" ) = zp_ppk : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Remingston
-// 
-@PointClass editormodel( "weapons/Shotsguns/remington/remington.vmdl" ) = zp_remingston : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/remington/remington.vmdl" ) = zp_remingston : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Revolver
-// 
-@PointClass editormodel( "weapons/Pistol/revolver/revolver.vmdl" ) = zp_revolver : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/revolver/revolver.vmdl" ) = zp_revolver : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Shotgun
-// 
-@PointClass editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // SMG
-// 
-@PointClass editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // SuperShortyShotGun
-// 
-@PointClass editormodel( "weapons/Shotsguns/supershorty/supershortyshotgun.vmdl" ) = zp_supershorty : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/supershorty/supershortyshotgun.vmdl" ) = zp_supershorty : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // USP
-// 
-@PointClass editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_usp : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_usp : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // Winchester
-// 
-@PointClass editormodel( "weapons/Shotsguns/winchester/winchester.vmdl" ) = zp_winchester : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/winchester/winchester.vmdl" ) = zp_winchester : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // ZombieHand
-// 
-@PointClass editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_zombiehand : ""
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_zombiehand : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 
-// 
+//
 // ZombiePanic.DeathmatchGame
-// 
-@PointClass = zombiepanic : ""
+//
+@PointClass base(BaseProperties_zombiepanic) = zombiepanic : ""
 [
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 ]
 
