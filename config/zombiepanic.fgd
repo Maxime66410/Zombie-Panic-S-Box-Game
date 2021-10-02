@@ -18,7 +18,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/ak47/ak47.vmdl" ) = zp_ak47 : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -28,7 +28,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/axe/axe.vmdl" ) = zp_axe : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -38,7 +38,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/baseballbat/baseballbatmetal.vmdl" ) = zp_baseballbatmetal : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -48,7 +48,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/baseballbat/baseballbatwood.vmdl" ) = zp_baseballbatwood : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -58,7 +58,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/cookingpot/cookingpot.vmdl" ) = zp_cookingpot : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -68,7 +68,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_crossbow/rust_crossbow.vmdl" ) = dm_crossbow : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -78,7 +78,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/crowbar/crowbar.vmdl" ) = zp_crowbar : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -88,7 +88,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) = weapon_flashlight : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -98,7 +98,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/fryingpan/fryingpan.vmdl" ) = zp_fryingpan : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -108,7 +108,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/glock17/glock17.vmdl" ) = zp_glock17 : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -118,7 +118,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/glock18c/glock18.vmdl" ) = zp_glock18 : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -128,7 +128,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/golfclub/golfclub.vmdl" ) = zp_golfclub : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -138,7 +138,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/keyboard/keyboard.vmdl" ) = zp_keyboard : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -148,7 +148,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_knife : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -158,7 +158,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/leadpipe/leadpipe.vmdl" ) = zp_pipe : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -168,7 +168,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/m4/m4.vmdl" ) = zp_m4 : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -178,7 +178,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/chair/chair.vmdl" ) = zp_metalchair : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -188,7 +188,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Riffles/mp5/mp5.vmdl" ) = zp_mp5 : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -198,7 +198,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/leadpipe/pipewrench.vmdl" ) = zp_pipewrench : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -208,7 +208,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_pistol/rust_pistol.vmdl" ) = dm_pistol : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -218,7 +218,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/ppk/ppk.vmdl" ) = zp_ppk : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -228,7 +228,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/remington/remington.vmdl" ) = zp_remingston : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -238,7 +238,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/revolver/revolver.vmdl" ) = zp_revolver : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -248,7 +248,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" ) = dm_shotgun : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -258,7 +258,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_smg/rust_smg.vmdl" ) = dm_smg : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -268,7 +268,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/supershorty/supershortyshotgun.vmdl" ) = zp_supershorty : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -278,7 +278,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/usp/usp.vmdl" ) = zp_usp : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -288,7 +288,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Shotsguns/winchester/winchester.vmdl" ) = zp_winchester : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -298,7 +298,7 @@
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/rust_boneknife/rust_boneknife.vmdl" ) = weapon_zombiehand : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
@@ -308,6 +308,6 @@
 //
 @PointClass base(BaseProperties_zombiepanic) = zombiepanic : ""
 [
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 ]
 
