@@ -185,7 +185,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 			chooseMelee();
 			
 			choosePistol();
-			
+
 			GiveAmmo( AmmoType.Pistol, 120 );
 			GiveAmmo( AmmoType.Magnum, 64 );
 			GiveAmmo( AmmoType.Rifle, 340 );
@@ -589,7 +589,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	public void chooseMelee()
 	{
 		Random MeleeRandom = new Random();
-		var MeleeRandomNumber = MeleeRandom.Next( 0, 11 );
+		var MeleeRandomNumber = MeleeRandom.Next( 0, 14 );
 
 		if ( MeleeRandomNumber == 0 )
 		{
@@ -644,6 +644,21 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( MeleeRandomNumber == 10 )
 		{
 			Inventory.Add( new PipeWrench() );
+		}
+
+		if ( MeleeRandomNumber == 11 )
+		{
+			Inventory.Add(new Machete());
+		}
+
+		if ( MeleeRandomNumber == 12 )
+		{
+			Inventory.Add(new Shovel());
+		}
+
+		if ( MeleeRandomNumber == 13 )
+		{
+			Inventory.Add( new Wrench() );
 		}
 	}
 	
