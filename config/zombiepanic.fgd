@@ -224,6 +224,16 @@
 ]
 
 //
+// Plank
+//
+@PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Melee/plank/plank.vmdl" ) = zp_plank : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // PPK
 //
 @PointClass base(BaseProperties_zombiepanic) editormodel( "weapons/Pistol/ppk/ppk.vmdl" ) = zp_ppk : ""

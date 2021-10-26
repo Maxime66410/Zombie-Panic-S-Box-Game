@@ -181,7 +181,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( !IsZombie )
 		{
 			Inventory.DeleteContents();
-			
+
 			chooseMelee();
 			
 			choosePistol();
@@ -589,7 +589,7 @@ public partial class DeathmatchPlayer : Sandbox.Player
 	public void chooseMelee()
 	{
 		Random MeleeRandom = new Random();
-		var MeleeRandomNumber = MeleeRandom.Next( 0, 14 );
+		var MeleeRandomNumber = MeleeRandom.Next( 0, 15 );
 
 		if ( MeleeRandomNumber == 0 )
 		{
@@ -659,6 +659,11 @@ public partial class DeathmatchPlayer : Sandbox.Player
 		if ( MeleeRandomNumber == 13 )
 		{
 			Inventory.Add( new Wrench() );
+		}
+
+		if ( MeleeRandomNumber == 14 )
+		{
+			Inventory.Add( new Plank() );
 		}
 	}
 	
