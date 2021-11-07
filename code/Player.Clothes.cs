@@ -92,14 +92,14 @@ partial class DeathmatchPlayer
 			jacket.EnableHideInFirstPerson = true;
 			
 			var propInfo = jacket.GetModel().GetPropData();
-			if ( propInfo.ParentBodygroupName != null )
+			/*if ( propInfo.ParentBodygroupName != null )
 			{
 				SetBodyGroup( propInfo.ParentBodygroupName, propInfo.ParentBodygroupValue );
 			}
 			else
 			{
 				SetBodyGroup( "Chest", 0 );
-			}
+			}*/
 		}
 
 		if ( true )
