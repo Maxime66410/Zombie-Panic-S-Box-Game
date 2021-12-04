@@ -48,11 +48,4 @@ public class ScoreboardEntry : Sandbox.UI.ScoreboardEntry
 	{
 		Fps = Add.Label( "", "fps" );
 	}
-
-	public override void UpdateFrom( PlayerScore.Entry entry )
-	{
-		base.UpdateFrom( entry );
-
-		Fps.Text = entry.Get<int>( "fps", 0 ).ToString();
-	}
 }

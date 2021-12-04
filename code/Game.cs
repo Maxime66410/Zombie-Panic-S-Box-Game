@@ -193,7 +193,7 @@ namespace ZombiePanic {
 					if ( MusiqueToRestart <= 317 )
 					{
 						MusiqueToRestart++;
-						Log.Info("Add Int MUsique " + MusiqueToRestart);
+						Log.Info("Add Int Musique " + MusiqueToRestart);
 					}
 
 					if ( MusiqueToRestart >= 318 )
@@ -201,7 +201,7 @@ namespace ZombiePanic {
 						StopAmbiant();
 						Sound.FromScreen( "ambiantmusic.ambiant" );
 						MusiqueToRestart = 0;
-						Log.Info("RESET Int MUsique " + MusiqueToRestart);
+						Log.Info("RESET Int Musique " + MusiqueToRestart);
 					}
 
 					Log.Info( Instance.RoundDuration );
